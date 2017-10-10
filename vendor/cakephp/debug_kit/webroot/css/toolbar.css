@@ -58,6 +58,7 @@ p {
 }
 
 .toolbar {
+        display: none;
 	background: #D33C44;
 	height: 40px;
 	position: absolute;
