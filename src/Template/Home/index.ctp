@@ -62,12 +62,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 </div>
                                             </div>
                                             <div class="col-md-4 top-grid-left-info">
-                                                <a class="text" href="single.html">Fusce ornare congue ligula vel placerat</a>
-                                                <p>Nam id sollicitudin felis. Nulla non bibendum arcu. Vestibulum non venenatis risus.Suspendisse venenatis venenatis mi.</p>
+                                                <a class="text" href="single.html">kết quả bóng đó hôm nay</a>
+                                                <p>Kết quả bóng đá trong hôm nay</p>
                                                 <div class="t-grid">
                                                     <ul>
                                                         <li><a href="#"><i class="fa fa-clock-o"></i> 2h</a></li>
-                                                        <li><a href="#"><i class="fa fa-user"></i> Ornare Congue</a></li>
+                                                        <li><a href="#"><i class="fa fa-user"></i> Tom</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -82,7 +82,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     </div>
                                                     <div class="three-grid-text">
                                                         <div class="three-grid-text-heading">
-                                                            <a class="text" href="single.html">Fusce ornare congue ligula vel placerat</a>
+                                                            <a class="text" href="single.html">Bóng đá tin tức</a>
                                                         </div>
                                                         <div class="t-grid author-grid">
                                                             <ul>
@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     </div>
                                                     <div class="three-grid-text">
                                                         <div class="three-grid-text-heading">
-                                                            <a class="text" href="single.html">Fusce ornare congue ligula vel placerat</a>
+                                                            <a class="text" href="single.html">Bóng đá tin tức</a>
                                                         </div>
                                                         <div class="t-grid author-grid">
                                                             <ul>
@@ -118,7 +118,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     </div>
                                                     <div class="three-grid-text">
                                                         <div class="three-grid-text-heading">
-                                                            <a class="text" href="single.html">Fusce ornare congue ligula vel placerat</a>
+                                                            <a class="text" href="single.html">Bóng đá tin tức</a>
                                                         </div>
                                                         <div class="t-grid author-grid">
                                                             <ul>
@@ -141,8 +141,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     </div>
                                                     <div class="two-grid-text">
                                                         <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="single.html">Fusce ornare congue ligula vel placerat</a>
-                                                            <p>Nam id sollicitudin felis. Nulla non bibendum arcu. Vestibulum non venenatis risus.Suspendisse venenatis venenatis mi, et cursus risus vehicula non.</p>
+                                                            <a class="text" href="single.html">Bóng đá tin tức</a>
+                                                            <p>Bóng đá tin tứcBóng đá tin tức</p>
                                                         </div>
                                                         <div class="t-grid author-grid two-grid-author">
                                                             <ul>
@@ -160,8 +160,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                     </div>
                                                     <div class="two-grid-text">
                                                         <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="#">Fusce ornare congue ligula vel placerat</a>
-                                                            <p>Nam id sollicitudin felis. Nulla non bibendum arcu. Vestibulum non venenatis risus.Suspendisse venenatis venenatis mi, et cursus risus vehicula non.</p>
+                                                            <a class="text" href="#">Bóng đá tin tức</a>
+                                                            <p>Bóng đá tin tức trong ngày.</p>
                                                         </div>
                                                         <div class="t-grid author-grid two-grid-author">
                                                             <ul>
@@ -180,32 +180,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <div class="two-grids-bottom-grids">
                                                 <div class="col-md-6 two-grids-bottom-grid">
                                                     <div class="two-grids-bottom-grid-img">
-                                                        <a href="single.html">Cras euismod tortor sit amet sem dapibus lacinia vel ut felis</a>
+                                                        <a href="single.html">Bóng đá tin tức </a>
                                                         <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f5.jpg" alt="" /></a>
                                                     </div>
                                                     <div class="two-grids-bottom-grid-info">
                                                         <ul>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Mauris ac vestibulum lectus</a></li>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Nam condimentum tempor ex id tempor</a></li>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Aenean tempus nunc non leo porta</a></li>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Nam tincidunt dui vulputate ullamcorper</a></li>
-                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Duis lacus enim, fermentum sit amet</a></li>
-                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Donec vitae est vitae mi consectetur</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 1</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 2</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 3</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 4</a></li>
+                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức 5</a></li>
+                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> DBóng đá tin tức 6</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 two-grids-bottom-grid">
                                                     <div class="two-grids-bottom-grid-img">
-                                                        <a href="single.html">Donec vitae est vitae mi consectetur molestie at ac ex</a>
+                                                        <a href="single.html">Bóng đá tin tức </a>
                                                         <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f3.jpg" alt="" /></a>
                                                     </div>
                                                     <div class="two-grids-bottom-grid-info">
                                                         <ul>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Mauris ac vestibulum lectus</a></li>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Nam condimentum tempor ex id tempor</a></li>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Nam tincidunt dui vulputate ullamcorper</a></li>
-                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Duis lacus enim, fermentum sit amet</a></li>
-                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Donec vitae est vitae mi consectetur</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 1</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 2</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 3</a></li>
+                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức 4</a></li>
+                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức 5</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -214,29 +214,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <div class="two-grids-bottom-grids">
                                                 <div class="col-md-6 two-grids-bottom-grid">
                                                     <div class="two-grids-bottom-grid-img">
-                                                        <a href="single.html">Proin urna mauris, consequat quis nisl non tincidunt pharetra</a>
+                                                        <a href="single.html">Bóng đá tin tức</a>
                                                         <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f9.jpg" alt="" /></a>
                                                     </div>
                                                     <div class="two-grids-bottom-grid-info">
                                                         <ul>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Mauris ac vestibulum lectus</a></li>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Aenean tempus nunc non leo porta</a></li>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Nam tincidunt dui vulputate ullamcorper</a></li>
-                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Duis lacus enim, fermentum sit amet</a></li>
-                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Donec vitae est vitae mi consectetur</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 1</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 2</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 3</a></li>
+                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức 4</a></li>
+                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức 5</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 two-grids-bottom-grid">
                                                     <div class="two-grids-bottom-grid-img">
-                                                        <a href="single.html">Nunc metus neque, placerat at sapien eget, tempor</a>
+                                                        <a href="single.html">Bóng đá tin tức </a>
                                                         <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f2.jpg" alt="" /></a>
                                                     </div>
                                                     <div class="two-grids-bottom-grid-info">
                                                         <ul>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Mauris ac vestibulum lectus</a></li>
-                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Nam condimentum tempor ex id tempor</a></li>
-                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Donec vitae est vitae mi consectetur</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i>Bóng đá tin tức 1</a></li>
+                                                            <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 2</a></li>
+                                                            <li><a href="v_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức 4</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -247,7 +247,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <!-- more-news -->
                                         <div class="more-news">
                                             <div class="more-news-heading">
-                                                <h3>More News</h3>
+                                                <h3>Tin mới nhất</h3>
                                             </div>
                                             <div class="more-news-grids">
                                                 <div class="col-md-6 more-news-left">
@@ -258,35 +258,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                 <div class="date-text">
                                                                     <h4>Premier League</h4>
                                                                     <ul>
-                                                                        <li><a href="single.html"><i class="fa fa-arrow-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                        <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 1</a></li>
+                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức 2</a></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="date-text">
                                                                     <h4>Championship</h4>
                                                                     <ul>
-                                                                        <li><a href="single.html"><i class="fa fa-arrow-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                        <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức 2</a></li>
+                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức1 </a></li>
+                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức 2</a></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="date-text">
                                                                     <h4>FA Cup</h4>
                                                                     <ul>
-                                                                        <li><a href="single.html"><i class="fa fa-arrow-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                        <li><a href="single.html"><i class="fa fa-arrow-right"></i> Bóng đá tin tức </a></li>
+                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức </a></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="date-text">
                                                                     <h4>Champions League</h4>
                                                                     <ul>
-                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                        <li><a href="V_single.html"><i class="fa fa-play-circle-o"></i> Bóng đá tin tức </a></li>
                                                                     </ul>
                                                                 </div>
                                                                 <div class="date-text">
                                                                     <h4>Champions League</h4>
                                                                     <ul>
-                                                                        <li><a href="single.html"><i class="fa fa-arrow-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
+                                                                        <li><a href="single.html"><i class="fa fa-arrow-right"></i>Bóng đá tin tức </a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -381,8 +381,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f8.jpg" alt="" /></a>
                                             </div>
                                             <div class="top-grid-left-right-info">
-                                                <a class="text" href="single.html">Phasellus ligula lectus</a>
-                                                <p>Nam id sollicitudin felis. Nulla non bibendum arcu.Suspendisse venenatis venenatis mi, et cursus risus vehicula non.</p>
+                                                <a class="text" href="single.html">Bóng đá tin tức </a>
+                                                <p>Bóng đá tin tức </p>
                                                 <div class="t-grid right-info-t-grid">
                                                     <ul>
                                                         <li><a href="#"><i class="fa fa-clock-o"></i> 4h</a></li>
@@ -393,15 +393,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="top-grid-left-right-grid">
                                             <div class="top-grid-left-right-top">
-                                                <a href="single.html">Maecenas ut molestie neque, eget faucibus turpis</a>
-                                                <p>Nunc accumsan neque id massa molestie, ac semper quam maximus.Maecenas suscipit, ipsum vel condimentum</p>
+                                                <a href="single.html">Bóng đá tin tức </a>
+                                                <p>Bóng đá tin tức </p>
                                             </div>
                                             <div class="top-grid-left-right-img">
                                                 <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f14.jpg" alt="" /></a>
                                             </div>
                                             <div class="top-grid-left-right-info">
-                                                <a class="text" href="single.html">Lorem ipsum dolor sit amet</a>
-                                                <p>Nam id sollicitudin felis. Nulla non bibendum arcu.Suspendisse venenatis venenatis mi, et cursus risus vehicula non.</p>
+                                                <a class="text" href="single.html">Bóng đá tin tức </a>
+                                                <p>Bóng đá tin tức </p>
                                                 <div class="t-grid right-info-t-grid">
                                                     <ul>
                                                         <li><a href="#"><i class="fa fa-clock-o"></i> 4h</a></li>
@@ -412,15 +412,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="top-grid-left-right-grid">
                                             <div class="top-grid-left-right-top">
-                                                <a href="single.html">Maecenas ut molestie neque, eget faucibus turpis</a>
-                                                <p>Nunc accumsan neque id massa molestie, ac semper quam maximus.Maecenas suscipit, ipsum vel condimentum</p>
+                                                <a href="single.html">Bóng đá tin tức </a>
+                                                <p>Bóng đá tin tức </p>
                                             </div>
                                             <div class="top-grid-left-right-img">
                                                 <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f13.jpg" alt="" /></a>
                                             </div>
                                             <div class="top-grid-left-right-info">
-                                                <a class="text" href="single.html">Donec sodales consectetur ex, in euismod odio pharetra eget</a>
-                                                <p>Nam id sollicitudin felis. Nulla non bibendum arcu.Suspendisse venenatis venenatis mi, et cursus risus vehicula non.</p>
+                                                <a class="text" href="single.html">Bóng đá tin tức </a>
+                                                <p>Bóng đá tin tức </p>
                                                 <div class="t-grid right-info-t-grid">
                                                     <ul>
                                                         <li><a href="#"><i class="fa fa-clock-o"></i> 4h</a></li>
@@ -431,19 +431,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="top-grid-left-right-grid">
                                             <div class="top-grid-left-right-top">
-                                                <a href="single.html">Maecenas ut molestie neque, eget faucibus turpis</a>
-                                                <p>Nunc accumsan neque id massa molestie, ac semper quam maximus.Maecenas suscipit, ipsum vel condimentum</p>
+                                                <a href="single.html">Bóng đá tin tức </a>
+                                                <p>Bóng đá tin tức </p>
                                             </div>
                                             <div class="top-grid-left-right-img">
                                                 <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f1.jpg" alt="" /></a>
                                             </div>
                                             <div class="top-grid-left-right-info">
-                                                <a class="text" href="single.html">Donec sodales consectetur ex, in euismod odio pharetra eget</a>
-                                                <p>Nam id sollicitudin felis. Nulla non bibendum arcu.Suspendisse venenatis venenatis mi, et cursus risus vehicula non.</p>
+                                                <a class="text" href="single.html">Bóng đá tin tức </a>
+                                                <p>Bóng đá tin tức </p>
                                                 <div class="t-grid right-info-t-grid">
                                                     <ul>
                                                         <li><a href="#"><i class="fa fa-clock-o"></i> 7h</a></li>
-                                                        <li><a href="#"><i class="fa fa-user"></i> Donec sodales</a></li>
+                                                        <li><a href="#"><i class="fa fa-user"></i> sieurobo </a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -455,7 +455,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <div class="top-news-grids">
                                                 <div class="top-news-grid">
                                                     <div class="top-news-grid-heading">
-                                                        <a href="single.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum ac nulla</a>
+                                                        <a href="single.html">Bóng đá tin tức </a>
                                                     </div>
                                                     <div class="t-grid top-t-grid">
                                                         <ul>
@@ -466,7 +466,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 </div>
                                                 <div class="top-news-grid">
                                                     <div class="top-news-grid-heading">
-                                                        <a href="single.html">Duis orci enim, rutrum vel sodales ut, tincidunt nec turpis.</a>
+                                                        <a href="single.html">Bóng đá tin tức </a>
                                                     </div>
                                                     <div class="t-grid top-t-grid">
                                                         <ul>
@@ -477,7 +477,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                 </div>
                                                 <div class="top-news-grid">
                                                     <div class="top-news-grid-heading">
-                                                        <a href="single.html">Sed leo leo, porta vel commodo in, vulputate eu est. In rhoncus tempor dictum. </a>
+                                                        <a href="single.html">Bóng đá tin tức  </a>
                                                     </div>
                                                     <div class="t-grid top-t-grid">
                                                         <ul>
@@ -500,7 +500,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <!-- today-match -->
                                 <div class="today-match">
                                     <div class="today-match-heading">
-                                        <h2>Today Matches</h2>
+                                        <h2>Lịch thi đấu</h2>
                                     </div>
                                     <div class="match-grid">
                                         <div class="match-info">
@@ -519,16 +519,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <!-- ranking -->
                                 <div class="ranking">
                                     <div class="ranking-heading">
-                                        <h3>Top 20 Teams</h3>
+                                        <h3>Bảng xếp hạng</h3>
                                     </div>
                                     <div class="ranking-grids">
                                         <table>
                                             <thead>
                                             <th class="th-rank">
-                                                Rank
+                                                Hạng
                                             </th>
                                             <th class="th-country">
-                                                Country
+                                                Đất nước
                                             </th>
                                             <th class="th-t-points">
                                                 Total Points
@@ -826,7 +826,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <!-- player-rank -->
                                 <div class="player-rank">
                                     <div class="ranking-heading">
-                                        <h3>Top 10 Players</h3>
+                                        <h3>Top 10 Cầu thủ</h3>
                                     </div>
                                     <div class="ranking-grids">
                                         <table>
@@ -1027,7 +1027,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <!-- most-view-grids -->
                                 <div class="most-view-grids">
                                     <div class="most-view-grids-heading">
-                                        <h3>Most Viewed</h3>
+                                        <h3>Xem nhiều nhất</h3>
                                     </div>
                                     <div class="sap_tabs">
                                         <div id="horizontalTab" style="display: block; margin: 0px;">
@@ -1045,8 +1045,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f7.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Sed neque nibh</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1055,8 +1055,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f8.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="#">Nam efficitur</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="#">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1065,8 +1065,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f10.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Quisque lacinia</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1075,8 +1075,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f13.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Duis accumsan</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1085,8 +1085,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f15.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Nulla facilisi</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1097,8 +1097,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f15.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Nulla facilisi</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1107,8 +1107,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f7.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Sed neque nibh</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1117,8 +1117,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f8.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Nam efficitur</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1127,8 +1127,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f10.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Quisque lacinia</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1137,8 +1137,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f13.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Duis accumsan</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1149,8 +1149,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f13.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Duis accumsan</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1159,8 +1159,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f15.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Nulla facilisi</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1169,8 +1169,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f7.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Sed neque nibh</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1179,8 +1179,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f8.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Nam efficitur</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1189,8 +1189,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                             <a href="single.html"><img src="<?php echo $this->request->webroot . "img/" ?>images/f10.jpg" alt=""></a>
                                                         </div>
                                                         <div class="news-right-grids-info most-view-left-img">
-                                                            <a href="single.html">Quisque lacinia</a>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                            <a href="single.html">Tin tức bóng đá</a>
+                                                            <p>Tin tức bóng đá</p>
                                                         </div>
                                                         <div class="clearfix"> </div>
                                                     </div>
@@ -1217,7 +1217,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="col-md-6 more-grid-right">
                                             <div class="more-grid-right-top">
-                                                <a href="index.html">Lorem ipsum dolor sit amet</a>
+                                                <a href="index.html">Tin tức bóng đá</a>
                                             </div>
                                             <div class="more-grid-right-bottom">
                                                 <a href="index.html">Football</a>
@@ -1233,7 +1233,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="col-md-6 more-grid-right">
                                             <div class="more-grid-right-top">
-                                                <a href="baseball.html">Quisque tristique dignissim</a>
+                                                <a href="baseball.html">Tin tức bóng đá</a>
                                             </div>
                                             <div class="more-grid-right-bottom">
                                                 <a href="baseball.html">Baseball</a>
@@ -1249,7 +1249,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="col-md-6 more-grid-right">
                                             <div class="more-grid-right-top">
-                                                <a href="basketball.html">Morbi tincidunt urna condimentum</a>
+                                                <a href="basketball.html">Tin tức bóng đá</a>
                                             </div>
                                             <div class="more-grid-right-bottom">
                                                 <a href="basketball.html">Basketball</a>
@@ -1265,7 +1265,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="col-md-6 more-grid-right">
                                             <div class="more-grid-right-top">
-                                                <a href="horse_Racing.html">Suspendisse viverra vestibulum</a>
+                                                <a href="horse_Racing.html">Tin tức bóng đá</a>
                                             </div>
                                             <div class="more-grid-right-bottom">
                                                 <a href="horse_Racing.html">Horse Racing</a>
@@ -1284,7 +1284,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="col-md-6 more-grid-right">
                                             <div class="more-grid-right-top">
-                                                <a href="golf.html">Nullam nec eros ac purus luctus</a>
+                                                <a href="golf.html">Tin tức bóng đá</a>
                                             </div>
                                             <div class="more-grid-right-bottom">
                                                 <a href="golf.html">Golf</a>
@@ -1300,7 +1300,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </div>
                                         <div class="col-md-6 more-grid-right">
                                             <div class="more-grid-right-top">
-                                                <a href="tennis.html">Vivamus quis magna ornare</a>
+                                                <a href="tennis.html">Tin tức bóng đá</a>
                                             </div>
                                             <div class="more-grid-right-bottom">
                                                 <a href="tennis.html">Tennis</a>
@@ -1439,44 +1439,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!--pop-up-->
         <script src="<?php echo $this->request->webroot . "js" ?>/menu_jquery.js"></script>
         <!--//pop-up-->	
-        <!-- clock-bottom -->
-        <script type="text/javascript">
-                    $(document).ready(function () {
-                        // Create two variable with the names of the months and days in an array
-                        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                        var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-
-                        // Create a newDate() object
-                        var newDate = new Date();
-                        // Extract the current date from Date object
-                        newDate.setDate(newDate.getDate());
-                        // Output the day, date, month and year    
-                        $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
-
-                        setInterval(function () {
-                            // Create a newDate() object and extract the seconds of the current time on the visitor's
-                            var seconds = new Date().getSeconds();
-                            // Add a leading zero to seconds value
-                            $("#sec").html((seconds < 10 ? "0" : "") + seconds);
-                        }, 1000);
-
-                        setInterval(function () {
-                            // Create a newDate() object and extract the minutes of the current time on the visitor's
-                            var minutes = new Date().getMinutes();
-                            // Add a leading zero to the minutes value
-                            $("#min").html((minutes < 10 ? "0" : "") + minutes);
-                        }, 1000);
-
-                        setInterval(function () {
-                            // Create a newDate() object and extract the hours of the current time on the visitor's
-                            var hours = new Date().getHours();
-                            // Add a leading zero to the hours value
-                            $("#hours").html((hours < 10 ? "0" : "") + hours);
-                        }, 1000);
-
-                    });
-        </script>
-        <!-- clock-bottom -->
+        
         <!-- ResponsiveTabs -->
         <script src="<?php echo $this->request->webroot . "js" ?>/easyResponsiveTabs.js" type="text/javascript"></script>
         <script type="text/javascript">
