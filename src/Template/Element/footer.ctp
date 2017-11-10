@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+<footer>
+    <div class="footer-left">
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#"  data-toggle="modal" data-target="#myModal">Feedback</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & conditions</a></li>
+        </ul>
+    </div>
+    <div class="copyright">
+        <p>© 2016 Live Info. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts.</a></p>
+    </div>
+    <div class="social">
+        <ul>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+            <li><a href="#"><i class="fa fa-vk"></i></a></li>
+        </ul>
+    </div>
+    <div class="clearfix"> </div>
+</footer>
