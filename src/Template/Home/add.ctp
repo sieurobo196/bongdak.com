@@ -11,6 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
     <head>
         <title>Live info a Sports Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+        <link rel="shortcut icon" href="<?php echo $this->request->webroot . "img/logo_bongdak.png" ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta property="og:title" content="Vide" />
@@ -35,6 +36,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!-- Meters graphs -->
         <script src="<?php echo $this->request->webroot . "js" ?>/jquery-1.11.1.min.js"></script>
         <!-- Placed js at the end of the document so the pages load faster -->
+        <style>
+            .input.text {
+                padding: 3px;
+            }
+            .input.text>label {
+                padding-right: 6px;
+            }
+        </style>
     </head> 
 
     <body class="sticky-header left-side-collapsed">
@@ -54,14 +63,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <fieldset>
                         <h2>Add Articles</h2>
                         <?php
-                        echo $this->Form->input("Title");
-                        echo $this->Form->input("MapUrl");
-                        echo $this->Form->input("Type");
-                        echo $this->Form->input("MetaDes", array("id" => "des_meta"));
-                        echo $this->Form->input("MetaKey", array("id" => "keys"));
-                        echo $this->Form->input("Description", array("id" => "description"));
-                        echo $this->Form->input("File", array("type" => "file", "id" => "file"));
-                        echo $this->Form->input("Content", array("type" => "textarea", "id" => "content_article"));
+                        echo $this->Form->input("title");
+                        echo $this->Form->input("mapUrl");
+                        echo $this->Form->input("type");
+                        echo $this->Form->input("metaDes");
+                        echo $this->Form->input("metaKey");
+                        echo $this->Form->input("description");
+                        echo $this->Form->input("file");
+                        echo $this->Form->input("content", array("type" => "textarea", "id" => "content_article"));
                         echo $this->Form->button('Submit');
                         ?>
                     </fieldset>
@@ -117,11 +126,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     title: 'Test template 2',
                                     content: 'Test 2'
                                 }],
-                            init_instance_callback: function () {
-                                window.setTimeout(function () {
-                                    $("#div").show();
-                                }, 1000);
-                            }
+//                            init_instance_callback: function () {
+//                                window.setTimeout(function () {
+//                                    $("#div").show();
+//                                }, 1000);
+//                            }
                         });
 
                     </script>

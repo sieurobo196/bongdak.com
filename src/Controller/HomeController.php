@@ -117,16 +117,16 @@ class HomeController extends AppController {
         $this->log("request is $isPost", 'info');
         if ($isPost) {
             $this->log("upload file ", "info");
-            $title = $this->request->data("Title");
-            $mapUrl = $this->request->data("MapUrl");
-            $description_meta = $this->request->data("MetaDes");
-            $keywords = $this->request->data("MetaKey");
-            $description = $this->request->data('Description');
-            $content_article = $this->request->data('Content');
-            $file = $this->request->data('File');
-            $type = $this->request->data('Type');
+            $title = $this->request->data("title");
+            $mapUrl = $this->request->data("mapUrl");
+            $description_meta = $this->request->data("metaDes");
+            $keywords = $this->request->data("metaKey");
+            $description = $this->request->data("description");
+            $content_article = $this->request->data("content");
+            $file = $this->request->data('file');
+            $type = $this->request->data("type");
             $newDate = date("Y-m-d H:i:s");
-            $imageName = date("Y-m-d") . $file["name"];
+            $this->log($file["name"], "info");
             $this->log($title, "info");
             $this->log($mapUrl, "info");
             $this->log($description_meta, "info");
@@ -135,31 +135,31 @@ class HomeController extends AppController {
             $this->log($content_article, "info");
             $this->log($type, "info");
             $this->log($newDate, "info");
-            $this->log($imageName, "info");
-            $pathFile = SITE_ROOT . "/uploads/articles" . DS . $imageName;
-            $isUpload = move_uploaded_file($file["tmp_name"], $pathFile);
-            $this->log("upload $isUpload", "info");
-            if ($isUpload) {
-                $articles_table = TableRegistry::get('Articles');
-                $article = $articles_table->newEntity();
-                $article->title = $title;
-                $article->map_url = $mapUrl;
-                $article->meta_des = $description_meta;
-                $article->meta_keys = $keywords;
-                $article->des_article = $description;
-                $article->image = $imageName;
-                $article->type = $type;
-                $article->content = $content_article;
-                $article->createdDate = $newDate;
-                if ($articles_table->save($article)) {
-                    echo "Article add success";
-                    $this->setAction('index');
-                } else {
-                    echo "Article add fail";
-                }
-            } else {
-                echo "upload file fail";
-            }
+//            $this->log($imageName, "info");
+//            $pathFile = SITE_ROOT . "/uploads" . DS . $imageName;
+//            $isUpload = move_uploaded_file($file["tmp_name"], $pathFile);
+//            $this->log("upload $isUpload", "info");
+//            if ($isUpload) {
+//                $articles_table = TableRegistry::get('Articles');
+//                $article = $articles_table->newEntity();
+//                $article->title = $title;
+//                $article->map_url = $mapUrl;
+//                $article->meta_des = $description_meta;
+//                $article->meta_keys = $keywords;
+//                $article->des_article = $description;
+//                $article->image = $imageName;
+//                $article->type = $type;
+//                $article->content = $content_article;
+//                $article->createdDate = $newDate;
+//                if ($articles_table->save($article)) {
+//                    echo "Article add success";
+//                    $this->setAction('index');
+//                } else {
+//                    echo "Article add fail";
+//                }
+//            } else {
+//                echo "upload file fail";
+//            }
         }
     }
 
