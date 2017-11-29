@@ -52,7 +52,7 @@ class ArticlesController extends AppController {
                 $article->content = $content_article;
                 $article->createdDate = $newDate;
                 if ($articles_table->save($article)) {
-                    echo "Article add success";
+//                    echo "Article add success";
                     $this->setAction('index');
                 } else {
                     echo "Article add fail";
@@ -64,12 +64,30 @@ class ArticlesController extends AppController {
     }
 
     public function index() {
+
+        $this->set('activeMenu', 'index');
         $listArticles = TableRegistry::get('Articles');
-        $query = $listArticles->find();
-        $this->set("results", $query);
+        $resultsAll = $listArticles->find()->order(["createdDate" => "DESC"])->limit(3);
+        $resultsTop = $listArticles->find()->order(["view" => "DESC"]);
+        $resultsNHA = $listArticles->find()->where(['type="NHA"'])->limit(2);
+        $resultsLALIGA = $listArticles->find()->where(['type="LLG"'])->limit(2);
+        $resultsC1 = $listArticles->find()->where(['type="C1"'])->limit(2);
+        $articleTop = $listArticles->find()->order(["createdDate" => "DESC"])->first();
+        $this->set("results", $resultsAll);
+        $this->set("resultsTop", $resultsTop);
+        $this->set("resultsNHA", $resultsNHA);
+        $this->set("resultsLALIGA", $resultsLALIGA);
+        $this->set("resultsC1", $resultsC1);
+        $this->set("articleTop", $articleTop);
         $this->set("title", "CodeWR Online Web Example");
         $this->set("keys", "PHP ,CakePHP");
         $this->set("des", "CodeWR Web Example");
+        $rank = TableRegistry::get('rank');
+        $topGoals = TableRegistry::get('top_goals');
+        $rankNHA = $rank->find()->where(["country" => "ANH"])->order(["score" => "DESC"]);
+        $this->set("rankNHA", $rankNHA);
+        $topGoalsNHA = $topGoals->find()->order(["goals" => "DESC"]);
+        $this->set("topGoalsNHA", $topGoalsNHA);
     }
 
     public function view($mapUrl) {
@@ -122,6 +140,20 @@ class ArticlesController extends AppController {
             $this->set('type', $article->type);
             $this->set('id', $id);
         }
+    }
+
+    public function single($page) {
+        $activeMenu = $page == null ? 'index' : $page;
+        $this->set('activeMenu', $activeMenu);
+        $rank = TableRegistry::get('rank');
+        $topGoals = TableRegistry::get('top_goals');
+        $rankNHA = $rank->find()->where(["country" => "ANH"])->order(["score" => "DESC"]);
+        $this->set("rankNHA", $rankNHA);
+        $topGoalsNHA = $topGoals->find()->order(["goals" => "DESC"]);
+        $this->set("topGoalsNHA", $topGoalsNHA);
+        $listArticles = TableRegistry::get('Articles');
+        $resultsNHA = $listArticles->find()->where(['type="NHA"'])->limit(2);
+        $this->set("resultsNHA", $resultsNHA);
     }
 
 }
