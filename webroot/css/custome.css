@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 28, 2017, 11:42:31 AM
+    Author     : NXCOMM
+*/
+.menu-title{
+    padding: 10px 10px 10px 0;
+    font-size: 23px;
+    font-weight: bold;
+}
+.image-article-detail{
+    height: 197px;
+    width: 352px;
+}
+.image-list-new{
+    width: 232px;
+    height: 130px;
+}
+.image-article-top{
+    width: 489px;
+    height: 274px;
+}
+.image-article-hot{
+    width: 374px;
+    height: 249px;
+}
+.three-grid-text-heading {
+    min-height: 65px;
+}
+.three-grid-text-heading.two-grid-text-heading {
+    min-height: 185px;
+}
+.description-article{
+    padding: 15px 0;
+    font-weight: bold;
+}
