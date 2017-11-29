@@ -3,7 +3,7 @@
         <a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
     </div>
     <div class="top-logo">
-        <h1><a href="index.html">Live Info</a></h1>
+        <h1><a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "index"]); ?>">Live Info</a></h1>
     </div>
     <div class="top-search">
         <form>
@@ -78,7 +78,7 @@
         </div>
     </div>
     <div class="dropdown-grids">
-        <div id="loginContainer"><a href="#"  data-toggle="modal" data-target="#myModal"><span>Login</span></a></div>
+        <!--<div id="loginContainer"><a href="#"  data-toggle="modal" data-target="#myModal"><span>Login</span></a></div>-->
     </div>
     <div class="clearfix"> </div>
 </div>
@@ -120,5 +120,5 @@
 
     });
 </script>
-
+<script src="<?php echo $this->request->webroot . "js" ?>/scripts.js"></script>
 <!-- clock-bottom -->
