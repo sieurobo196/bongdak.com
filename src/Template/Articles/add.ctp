@@ -67,11 +67,7 @@ echo $this->Form->end();
                 title: 'Test template 2',
                 content: 'Test 2'
             }],
-        init_instance_callback: function () {
-            window.setTimeout(function () {
-                $("#div").show();
-            }, 1000);
-        }
+        
     });
 
 </script>
