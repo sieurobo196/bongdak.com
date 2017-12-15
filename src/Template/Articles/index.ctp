@@ -26,7 +26,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4 top-grid-left-info">
-                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $articleTop->map_url]); ?>"><?php echo "$articleTop->title"; ?></a>
+                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $articleTop->type, $articleTop->map_url]); ?>"><?php echo "$articleTop->title"; ?></a>
                                             <p><?php echo "$articleTop->des_article"; ?></p>
                                             <div class="t-grid">
                                                 <ul>
@@ -44,11 +44,11 @@
                                             <div class="three-grid">
                                                 <div class="three-grid-info">
                                                     <div class="three-grid-img">
-                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><img class="image-list-new" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-list-new" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
                                                     </div>
                                                     <div class="three-grid-text">
                                                         <div class="three-grid-text-heading">
-                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
                                                         </div>
                                                         <div class="t-grid author-grid">
                                                             <ul>
@@ -71,11 +71,11 @@
                                             <div class="col-md-6 two-grid-left">
                                                 <div class="two-grid-info">
                                                     <div class="two-grid-img">
-                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
                                                     </div>
                                                     <div class="two-grid-text">
                                                         <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
                                                             <p><?php echo $row->des_article ?> </p>
                                                         </div>
                                                         <div class="t-grid author-grid two-grid-author">
@@ -97,11 +97,11 @@
                                             <div class="col-md-6 two-grid-left">
                                                 <div class="two-grid-info">
                                                     <div class="two-grid-img">
-                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
                                                     </div>
                                                     <div class="two-grid-text">
                                                         <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
                                                             <p><?php echo $row->des_article; ?> </p>
                                                         </div>
                                                         <div class="t-grid author-grid two-grid-author">
@@ -123,11 +123,11 @@
                                             <div class="col-md-6 two-grid-left">
                                                 <div class="two-grid-info">
                                                     <div class="two-grid-img">
-                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
                                                     </div>
                                                     <div class="two-grid-text">
                                                         <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
                                                             <p><?php echo $row->des_article; ?> </p>
                                                         </div>
                                                         <div class="t-grid author-grid two-grid-author">
@@ -153,10 +153,10 @@
                                 <?php foreach ($resultsTop as $row): ?>
                                     <div class="top-grid-left-right-grid">
                                         <div class="top-grid-left-right-img">
-                                            <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><img src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>" alt="" /></a>
+                                            <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>" alt="" /></a>
                                         </div>
                                         <div class="top-grid-left-right-info">
-                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->map_url]); ?>"><?php echo $row->title; ?> </a>
+                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?> </a>
 
                                             <div class="t-grid right-info-t-grid">
                                                 <ul>
@@ -187,12 +187,12 @@
                             <div class="match-grid">
                                 <div class="match-info">
                                     <ul>
-                                        <li><span>16:00</span> Germany <span class="color">Vs</span> England</li>
-                                        <li><span>17:30</span> Hungary <span class="color">Vs</span> Croatia</li>
-                                        <li><span>18:45</span> Finland <span class="color">Vs</span> Austria</li>
-                                        <li><span>19:00</span> Poland <span class="color">Vs</span> Spain</li>
-                                        <li><span>20:15</span> Italy <span class="color">Vs</span> France</li>
-                                        <li><span>20:45</span> Portugal <span class="color">Vs</span> Netherlands</li>
+                                        <?php foreach ($scheduleNHA as $row): 
+                                            $start_date = date('H:i d/m', strtotime($row->time_start));
+                                            ?>
+                                            <li><span><?php echo $start_date; ?></span> <?php echo $row->team_home; ?> <span class="color">vs</span> <?php echo $row->team_guest; ?></li>
+                                        <?php endforeach;
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
@@ -295,7 +295,8 @@
                                                         <?php echo $row->goals ?>
                                                     </td>
                                                 </tr>
-                                            <?php }
+                                                <?php
+                                            }
                                         endforeach;
                                         ?>
                                     </tbody>
@@ -364,7 +365,7 @@
         </div>
         <!-- //	Modal -->
         <!--footer section start-->
-<?php echo $this->element("footer"); ?>
+        <?php echo $this->element("footer"); ?>
         <!--footer section end-->
 
     </div>

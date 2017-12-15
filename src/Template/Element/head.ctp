@@ -4,11 +4,11 @@ $this->layout = false;
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Bóng đá K</title>
+        <title><?php echo $title; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="Live info Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <meta name="keywords" content="<?php echo $keys; ?>" />
+        <meta name="description" content="<?php echo $des; ?>" />
         <!-- Bootstrap Core CSS -->
         <link href="<?php echo $this->request->webroot . "css" ?>/bootstrap.min.css" rel='stylesheet' type='text/css' />
         <!-- Custom CSS -->

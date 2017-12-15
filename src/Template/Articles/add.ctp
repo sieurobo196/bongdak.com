@@ -1,12 +1,12 @@
 <script src="<?php echo $this->request->webroot . "js/" ?>tinymce.min.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-<?php echo $this->Form->create("Article",array("type" => "file")); ?>
+<?php echo $this->Form->create("Article", array("type" => "file")); ?>
 <fieldset>
     <h2>Add Articles</h2>
     <?php
     echo $this->Form->input("Title");
     echo $this->Form->input("MapUrl");
-    echo $this->Form->input("Type");
+    echo $this->Form->select("Type", ["anh" => "ANH", "cup-c1" => "C1", "tay-ban-nha" => "LALIGA", "italia" => "SERIA"]);
     echo $this->Form->input("MetaDes", array("id" => "des_meta"));
     echo $this->Form->input("MetaKey", array("id" => "keys"));
     echo $this->Form->input("Description", array("id" => "description"));
@@ -67,7 +67,6 @@ echo $this->Form->end();
                 title: 'Test template 2',
                 content: 'Test 2'
             }],
-        
     });
 
 </script>

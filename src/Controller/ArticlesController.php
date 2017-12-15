@@ -64,33 +64,45 @@ class ArticlesController extends AppController {
     }
 
     public function index() {
-
         $this->set('activeMenu', 'index');
         $listArticles = TableRegistry::get('Articles');
+        // get all resust
         $resultsAll = $listArticles->find()->order(["createdDate" => "DESC"])->limit(3);
-        $resultsTop = $listArticles->find()->order(["view" => "DESC"]);
-        $resultsNHA = $listArticles->find()->where(['type="NHA"'])->limit(2);
-        $resultsLALIGA = $listArticles->find()->where(['type="LLG"'])->limit(2);
-        $resultsC1 = $listArticles->find()->where(['type="C1"'])->limit(2);
-        $articleTop = $listArticles->find()->order(["createdDate" => "DESC"])->first();
         $this->set("results", $resultsAll);
+        // list articles top
+        $resultsTop = $listArticles->find()->order(["view" => "DESC"]);
         $this->set("resultsTop", $resultsTop);
+        // list articles NHA
+        $resultsNHA = $listArticles->find()->where(['type="anh"'])->limit(2);
         $this->set("resultsNHA", $resultsNHA);
+        //list articles laliga
+        $resultsLALIGA = $listArticles->find()->where(['type="tay-ban-nha"'])->limit(2);
         $this->set("resultsLALIGA", $resultsLALIGA);
+        //list articles C1
+        $resultsC1 = $listArticles->find()->where(['type="cup-c1"'])->limit(2);
         $this->set("resultsC1", $resultsC1);
+        // articles newest
+        $articleTop = $listArticles->find()->order(["createdDate" => "DESC"])->first();
         $this->set("articleTop", $articleTop);
-        $this->set("title", "CodeWR Online Web Example");
-        $this->set("keys", "PHP ,CakePHP");
-        $this->set("des", "CodeWR Web Example");
+        //table rank
         $rank = TableRegistry::get('rank');
-        $topGoals = TableRegistry::get('top_goals');
-        $rankNHA = $rank->find()->where(["country" => "ANH"])->order(["score" => "DESC"]);
+        $rankNHA = $rank->find()->where(["country" => "anh"])->order(["score" => "DESC"]);
         $this->set("rankNHA", $rankNHA);
+        // top goal
+        $topGoals = TableRegistry::get('top_goals');
         $topGoalsNHA = $topGoals->find()->order(["goals" => "DESC"]);
         $this->set("topGoalsNHA", $topGoalsNHA);
+        // schedule
+        $schedule = TableRegistry::get('schedule');
+        $scheduleNHA = $schedule->find();
+        $this->set("scheduleNHA", $scheduleNHA);
+
+        $this->set("title", "Bóng đá K");
+        $this->set("keys", "bong da, tin bong da,tin nhanh bóng đá, lịch thi đấu, bảng xếp hạng, tin chuyển nhượng, hậu trường cầu thủ, tin tức bóng đá");
+        $this->set("des", "BongDaK.com - cập nhật liên tục tin nhanh bóng đá, lịch thi đấu, kết quả, bảng xếp hạng tất cả các giải bóng đá, tin chuyển nhượng, hậu trường cầu thủ.");
     }
 
-    public function view($mapUrl) {
+    public function view($type, $mapUrl) {
         $this->log("call view $mapUrl", "info");
         $articles = TableRegistry::get('Articles');
         $article = $articles->find()->where(['map_url = "' . $mapUrl . '"'])->first();
@@ -99,6 +111,16 @@ class ArticlesController extends AppController {
         $this->set("keys", $article->meta_keys);
         $this->set("des", $article->meta_des);
         $this->set("id", $article->id);
+        $activeMenu = $type == null ? 'index' : $type;
+        $this->set('activeMenu', $activeMenu);
+        $rank = TableRegistry::get('rank');
+        $topGoals = TableRegistry::get('top_goals');
+        $rankNHA = $rank->find()->where(["country" => "anh"])->order(["score" => "DESC"]);
+        $this->set("rankNHA", $rankNHA);
+        $topGoalsNHA = $topGoals->find()->order(["goals" => "DESC"]);
+        $this->set("topGoalsNHA", $topGoalsNHA);
+        $resultsTop = $articles->find()->order(["view" => "DESC"]);
+        $this->set("resultsTop", $resultsTop);
     }
 
     public function edit($id) {
@@ -143,6 +165,19 @@ class ArticlesController extends AppController {
     }
 
     public function single($page) {
+        if ($page == 'anh') {
+            
+        } else if ($page == 'cup-c1') {
+            
+        } else if ($page == 'tay-ban-nha') {
+            
+        } else if ($page == 'italia') {
+            
+        } else if ($page == 'duc') {
+            
+        } else if ($page == 'phap') {
+            
+        }
         $activeMenu = $page == null ? 'index' : $page;
         $this->set('activeMenu', $activeMenu);
         $rank = TableRegistry::get('rank');

@@ -204,7 +204,6 @@
                                         </div>
                                     </div>
                                     <!-- //today-match -->
-
                                     <!-- player-rank -->
                                     <div class="player-rank">
                                         <div class="ranking-heading">
