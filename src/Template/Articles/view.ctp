@@ -22,7 +22,7 @@
                                     <?php foreach ($resultsTop as $row): ?>
                                         <div class="top-news-grid">
                                             <div class="top-news-grid-heading">
-                                                <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "single"]); ?>"><?php echo $row->title?> </a>
+                                                <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title ?> </a>
                                             </div>
                                             <div class="t-grid top-th-grid">
                                                 <ul>
@@ -34,7 +34,7 @@
                                         <?php
                                     endforeach;
                                     ?>
-                                   
+
                                 </div>
                             </div>
                             <!-- latest -->
@@ -55,9 +55,13 @@
                                     <div class="top-grid-left-left-grids">
                                         <div class="s-top-grid-left-img">
                                             <div  class="single-img-grid">
+                                                <div><a href="<?php echo $this->Url->build(["controller" => "Articles", "action" => "edit", $id]); ?>"> 
+                                                       edit
+
+                                                    </a></div>
                                                 <h2><?php echo $article->title; ?></h2>
                                                 <div class="description-article"><?php echo $article->des_article; ?></div>
-                                                <div><img src="<?php echo $this->request->webroot . "uploads/articles/$article->image" ?>"/></div>
+                                                <div class="image-article-view"><img style="width: 100%;" src="<?php echo $this->request->webroot . "uploads/articles/$article->image" ?>"/></div>
                                                 <div class="s-para">
                                                     <?php echo $article->content; ?>
                                                 </div>
@@ -70,23 +74,23 @@
                                 <div class="col-md-4 top-grid-left-right s-top-grid-left-right">
                                     <!-- most-view-grids -->
                                     <!-- today-match -->
-                                    <div class="today-match">
-                                        <div class="today-match-heading">
-                                            <h2>Lịch thi đấu</h2>
-                                        </div>
-                                        <div class="match-grid">
-                                            <div class="match-info">
-                                                <ul>
-                                                    <li><span>16:00</span> Germany <span class="color">Vs</span> England</li>
-                                                    <li><span>17:30</span> Hungary <span class="color">Vs</span> Croatia</li>
-                                                    <li><span>18:45</span> Finland <span class="color">Vs</span> Austria</li>
-                                                    <li><span>19:00</span> Poland <span class="color">Vs</span> Spain</li>
-                                                    <li><span>20:15</span> Italy <span class="color">Vs</span> France</li>
-                                                    <li><span>20:45</span> Portugal <span class="color">Vs</span> Netherlands</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!--                                    <div class="today-match">
+                                                                            <div class="today-match-heading">
+                                                                                <h2>Lịch thi đấu</h2>
+                                                                            </div>
+                                                                            <div class="match-grid">
+                                                                                <div class="match-info">
+                                                                                    <ul>
+                                                                                        <li><span>16:00</span> Germany <span class="color">Vs</span> England</li>
+                                                                                        <li><span>17:30</span> Hungary <span class="color">Vs</span> Croatia</li>
+                                                                                        <li><span>18:45</span> Finland <span class="color">Vs</span> Austria</li>
+                                                                                        <li><span>19:00</span> Poland <span class="color">Vs</span> Spain</li>
+                                                                                        <li><span>20:15</span> Italy <span class="color">Vs</span> France</li>
+                                                                                        <li><span>20:45</span> Portugal <span class="color">Vs</span> Netherlands</li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>-->
                                     <!-- //today-match -->
 
                                     <!-- player-rank -->

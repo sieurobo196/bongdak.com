@@ -143,6 +143,84 @@
                                         ?>
                                         <div class="clearfix"> </div>
                                     </div>
+                                     <div class="two-grids">
+                                        <div class="menu-title">BUNDESLIGA</div>
+                                        <?php foreach ($resultsDLA as $row): ?>
+                                            <div class="col-md-6 two-grid-left">
+                                                <div class="two-grid-info">
+                                                    <div class="two-grid-img">
+                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                    </div>
+                                                    <div class="two-grid-text">
+                                                        <div class="three-grid-text-heading two-grid-text-heading">
+                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                            <p><?php echo $row->des_article; ?> </p>
+                                                        </div>
+                                                        <div class="t-grid author-grid two-grid-author">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-clock-o"></i> 3h</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                        endforeach;
+                                        ?>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                     <div class="two-grids">
+                                        <div class="menu-title">SERIA</div>
+                                        <?php foreach ($resultsSRA as $row): ?>
+                                            <div class="col-md-6 two-grid-left">
+                                                <div class="two-grid-info">
+                                                    <div class="two-grid-img">
+                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                    </div>
+                                                    <div class="two-grid-text">
+                                                        <div class="three-grid-text-heading two-grid-text-heading">
+                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                            <p><?php echo $row->des_article; ?> </p>
+                                                        </div>
+                                                        <div class="t-grid author-grid two-grid-author">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-clock-o"></i> 3h</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                        endforeach;
+                                        ?>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                     <div class="two-grids">
+                                        <div class="menu-title">LIGUE 1</div>
+                                        <?php foreach ($resultsL1 as $row): ?>
+                                            <div class="col-md-6 two-grid-left">
+                                                <div class="two-grid-info">
+                                                    <div class="two-grid-img">
+                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                    </div>
+                                                    <div class="two-grid-text">
+                                                        <div class="three-grid-text-heading two-grid-text-heading">
+                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                            <p><?php echo $row->des_article; ?> </p>
+                                                        </div>
+                                                        <div class="t-grid author-grid two-grid-author">
+                                                            <ul>
+                                                                <li><a href="#"><i class="fa fa-clock-o"></i> 3h</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php
+                                        endforeach;
+                                        ?>
+                                        <div class="clearfix"> </div>
+                                    </div>
 
 
                                 </div>
