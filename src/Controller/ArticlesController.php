@@ -8,9 +8,14 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\Log\Log;
 use Cake\I18n\Time;
+use Cake\Event\Event;
 
 class ArticlesController extends AppController {
 
+    public function beforeFilter(Event $event) {
+        parent::beforeFilter($event);
+        $this->Auth->allow(["index", "view", "detail"]);
+    }
     public function add() {
         $this->log("start upload file add", 'info');
         $isPost = $this->request->is('post');
@@ -70,17 +75,26 @@ class ArticlesController extends AppController {
         $resultsAll = $listArticles->find()->order(["createdDate" => "DESC"])->limit(3);
         $this->set("results", $resultsAll);
         // list articles top
-        $resultsTop = $listArticles->find()->order(["view" => "DESC"]);
+        $resultsTop = $listArticles->find()->order(["view" => "DESC"])->limit(10);
         $this->set("resultsTop", $resultsTop);
         // list articles NHA
-        $resultsNHA = $listArticles->find()->where(['type="anh"'])->limit(2);
+        $resultsNHA = $listArticles->find()->where(['type="anh"'])->order(["createdDate" => "DESC"])->limit(2);
         $this->set("resultsNHA", $resultsNHA);
         //list articles laliga
-        $resultsLALIGA = $listArticles->find()->where(['type="tay-ban-nha"'])->limit(2);
+        $resultsLALIGA = $listArticles->find()->where(['type="tay-ban-nha"'])->order(["createdDate" => "DESC"])->limit(2);
         $this->set("resultsLALIGA", $resultsLALIGA);
         //list articles C1
-        $resultsC1 = $listArticles->find()->where(['type="cup-c1"'])->limit(2);
+        $resultsC1 = $listArticles->find()->where(['type="cup-c1"'])->order(["createdDate" => "DESC"])->limit(2);
         $this->set("resultsC1", $resultsC1);
+        //list articles C1
+        $resultsL1 = $listArticles->find()->where(['type="phap"'])->order(["createdDate" => "DESC"])->limit(2);
+        $this->set("resultsL1", $resultsL1);
+        //list articles C1
+        $resultsDLA = $listArticles->find()->where(['type="duc"'])->order(["createdDate" => "DESC"])->limit(2);
+        $this->set("resultsDLA", $resultsDLA);
+        //list articles C1
+        $resultsSRA = $listArticles->find()->where(['type="italia"'])->order(["createdDate" => "DESC"])->limit(2);
+        $this->set("resultsSRA", $resultsSRA);
         // articles newest
         $articleTop = $listArticles->find()->order(["createdDate" => "DESC"])->first();
         $this->set("articleTop", $articleTop);
@@ -106,21 +120,33 @@ class ArticlesController extends AppController {
         $this->log("call view $mapUrl", "info");
         $articles = TableRegistry::get('Articles');
         $article = $articles->find()->where(['map_url = "' . $mapUrl . '"'])->first();
-        $this->set("article", $article);
-        $this->set("title", $article->title);
-        $this->set("keys", $article->meta_keys);
-        $this->set("des", $article->meta_des);
-        $this->set("id", $article->id);
-        $activeMenu = $type == null ? 'index' : $type;
-        $this->set('activeMenu', $activeMenu);
-        $rank = TableRegistry::get('rank');
-        $topGoals = TableRegistry::get('top_goals');
-        $rankNHA = $rank->find()->where(["country" => "anh"])->order(["score" => "DESC"]);
-        $this->set("rankNHA", $rankNHA);
-        $topGoalsNHA = $topGoals->find()->order(["goals" => "DESC"]);
-        $this->set("topGoalsNHA", $topGoalsNHA);
-        $resultsTop = $articles->find()->order(["view" => "DESC"]);
-        $this->set("resultsTop", $resultsTop);
+        if (empty($article)) {
+            $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        } else {
+            $this->set("article", $article);
+            $this->set("title", $article->title);
+            $this->set("keys", $article->meta_keys);
+            $this->set("des", $article->meta_des);
+            $this->set("id", $article->id);
+            $activeMenu = $type == null ? 'index' : $type;
+            $this->set('activeMenu', $activeMenu);
+            $rank = TableRegistry::get('rank');
+            $topGoals = TableRegistry::get('top_goals');
+            $rankNHA = $rank->find()->where(["country" => $type])->order(["score" => "DESC"]);
+            $this->set("rankNHA", $rankNHA);
+            $topGoalsNHA = $topGoals->find()->where(["country" => $type])->order(["goals" => "DESC"]);
+            $this->set("topGoalsNHA", $topGoalsNHA);
+            $resultsTop = $articles->find()->where(["type" => $type])->order(["view" => "DESC"]);
+            $this->set("resultsTop", $resultsTop);
+            $view = $article->view;
+            $view++;
+            $article->view = $view;
+            if ($articles->save($article)) {
+                
+            } else {
+                $this->log("update view fail" + $view, "info");
+            }
+        }
     }
 
     public function edit($id) {
@@ -165,30 +191,49 @@ class ArticlesController extends AppController {
     }
 
     public function single($page) {
+        $typeRank = $page;
         if ($page == 'anh') {
-            
+            $this->set('title', "ANH");
+            $this->set('meta_des', "Bóng đá Anh");
+            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Anh");
         } else if ($page == 'cup-c1') {
-            
+//            $typeRank = "anh";
+            $this->set('title', "C1");
+            $this->set('meta_des', "Bóng đá C1");
+            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá C1");
         } else if ($page == 'tay-ban-nha') {
-            
+            $this->set('title', "Tây Ban Nha");
+            $this->set('meta_des', "Bóng đá Tây Ban Nha");
+            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Tây Ban Nha");
         } else if ($page == 'italia') {
-            
+            $this->set('title', "Ý");
+            $this->set('meta_des', "Bóng đá Ý");
+            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Ý");
         } else if ($page == 'duc') {
-            
+            $this->set('title', "Đức");
+            $this->set('meta_des', "Bóng đá Đức");
+            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Đức");
         } else if ($page == 'phap') {
-            
+            $this->set('title', "Pháp");
+            $this->set('meta_des', "Bóng đá Pháp");
+            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Pháp");
+        }else{
+            $this->redirect(['controller' => 'Articles', 'action' => 'index']);
         }
         $activeMenu = $page == null ? 'index' : $page;
         $this->set('activeMenu', $activeMenu);
         $rank = TableRegistry::get('rank');
         $topGoals = TableRegistry::get('top_goals');
-        $rankNHA = $rank->find()->where(["country" => "ANH"])->order(["score" => "DESC"]);
+        $rankNHA = $rank->find()->where(["country" => $typeRank])->order(["score" => "DESC"]);
         $this->set("rankNHA", $rankNHA);
-        $topGoalsNHA = $topGoals->find()->order(["goals" => "DESC"]);
+        $topGoalsNHA = $topGoals->find()->where(["country" => $typeRank])->order(["goals" => "DESC"]);
         $this->set("topGoalsNHA", $topGoalsNHA);
         $listArticles = TableRegistry::get('Articles');
-        $resultsNHA = $listArticles->find()->where(['type="NHA"'])->limit(2);
+        $resultsNHA = $listArticles->find()->where(["type" => $page])->limit(12);
+//        $resultsNHA = $listArticles->find()->limit(10);
         $this->set("resultsNHA", $resultsNHA);
+        $resultsTop = $listArticles->find()->order(["view" => "DESC"])->limit(5);
+        $this->set("resultsTop", $resultsTop);
     }
 
 }
