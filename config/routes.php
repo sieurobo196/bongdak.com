@@ -49,7 +49,24 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Home', 'action' => 'index']);
+   // examples route and agr
+    $routes->connect('/', ['controller' => 'Articles', 'action' => 'index']);
+    $routes->connect('/*', ['controller' => 'Articles', 'action' => 'single']);
+    $routes->connect('/view/*', ['controller' => 'Articles', 'action' => 'view']);
+    $routes->connect('/add', ['controller' => 'Articles', 'action' => 'add']);
+    $routes->connect('/edit/*', ['controller' => 'Articles', 'action' => 'edit']);
+    
+    // example working with database
+    $routes->connect('/users/add', ['controller' => 'Users', 'action' => 'add']);
+    $routes->connect('/users', ['controller' => 'Users', 'action' => 'index']);
+    $routes->connect('/users/edit/*', ['controller' => 'Users', 'action' => 'edit']);
+    $routes->connect('/users/delete/*', ['controller' => 'Users', 'action' => 'edit']);
+
+    
+    // example authenticate 
+    $routes->connect('/auth', ['controller' => 'Authexs', 'action' => 'index']);
+    $routes->connect('/login', ['controller' => 'Authexs', 'action' => 'login']);
+    $routes->connect('/logout', ['controller' => 'Authexs', 'action' => 'logout']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
