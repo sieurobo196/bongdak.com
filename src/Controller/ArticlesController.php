@@ -14,8 +14,9 @@ class ArticlesController extends AppController {
 
     public function beforeFilter(Event $event) {
         parent::beforeFilter($event);
-        $this->Auth->allow(["index", "view", "detail"]);
+        $this->Auth->allow(["index", "view", "single"]);
     }
+
     public function add() {
         $this->log("start upload file add", 'info');
         $isPost = $this->request->is('post');
@@ -71,33 +72,57 @@ class ArticlesController extends AppController {
     public function index() {
         $this->set('activeMenu', 'index');
         $listArticles = TableRegistry::get('Articles');
-        // get all resust
-        $resultsAll = $listArticles->find()->order(["createdDate" => "DESC"])->limit(3);
-        $this->set("results", $resultsAll);
+        $listAllArticle = $listArticles->find()->order(["createdDate" => "DESC"]);
+        $threeArticle = array();
+        $resultsNHA = array();
+        $resultsLALIGA = array();
+        $resultsC1 = array();
+        $resultsL1 = array();
+        $resultsDLA = array();
+        $resultsSRA = array();
+        $x = 0;
+        foreach ($listAllArticle as $value) {
+            if ($x == 0) {
+                $this->set("articleTop", $value);
+            } else if ($x < 4) {
+                array_push($threeArticle, $value);
+                $this->log(count($threeArticle), "info");
+            } else if ($value->type == "anh" && count($resultsNHA) < 2) {
+                array_push($resultsNHA, $value);
+            } else if ($value->type == "tay-ban-nha" && count($resultsLALIGA) < 2) {
+                array_push($resultsLALIGA, $value);
+            } else if ($value->type == "cup-c1" && count($resultsC1) < 2) {
+                array_push($resultsC1, $value);
+            } else if ($value->type == "phap" && count($resultsL1) < 2) {
+                array_push($resultsL1, $value);
+            } else if ($value->type == "duc" && count($resultsDLA) < 2) {
+                array_push($resultsDLA, $value);
+            } else if ($value->type == "italia" && count($resultsSRA) < 2) {
+                array_push($resultsSRA, $value);
+            }
+
+            $x++;
+        }
+
+        $this->set("results", $threeArticle);
         // list articles top
         $resultsTop = $listArticles->find()->order(["view" => "DESC"])->limit(10);
         $this->set("resultsTop", $resultsTop);
         // list articles NHA
-        $resultsNHA = $listArticles->find()->where(['type="anh"'])->order(["createdDate" => "DESC"])->limit(2);
         $this->set("resultsNHA", $resultsNHA);
-        //list articles laliga
-        $resultsLALIGA = $listArticles->find()->where(['type="tay-ban-nha"'])->order(["createdDate" => "DESC"])->limit(2);
+        //list articles lalig
         $this->set("resultsLALIGA", $resultsLALIGA);
         //list articles C1
-        $resultsC1 = $listArticles->find()->where(['type="cup-c1"'])->order(["createdDate" => "DESC"])->limit(2);
         $this->set("resultsC1", $resultsC1);
         //list articles C1
-        $resultsL1 = $listArticles->find()->where(['type="phap"'])->order(["createdDate" => "DESC"])->limit(2);
         $this->set("resultsL1", $resultsL1);
         //list articles C1
-        $resultsDLA = $listArticles->find()->where(['type="duc"'])->order(["createdDate" => "DESC"])->limit(2);
         $this->set("resultsDLA", $resultsDLA);
         //list articles C1
-        $resultsSRA = $listArticles->find()->where(['type="italia"'])->order(["createdDate" => "DESC"])->limit(2);
         $this->set("resultsSRA", $resultsSRA);
         // articles newest
-        $articleTop = $listArticles->find()->order(["createdDate" => "DESC"])->first();
-        $this->set("articleTop", $articleTop);
+//        $articleTop = $listArticles->find()->order(["createdDate" => "DESC"])->first();
+//        $this->set("articleTop", $articleTop);
         //table rank
         $rank = TableRegistry::get('rank');
         $rankNHA = $rank->find()->where(["country" => "anh"])->order(["score" => "DESC"]);
@@ -133,6 +158,11 @@ class ArticlesController extends AppController {
             $rank = TableRegistry::get('rank');
             $topGoals = TableRegistry::get('top_goals');
             $rankNHA = $rank->find()->where(["country" => $type])->order(["score" => "DESC"]);
+            $count = 0;
+            foreach ($rankNHA as $row) {
+                $count++;
+            }
+            $this->set("isRank", $count);
             $this->set("rankNHA", $rankNHA);
             $topGoalsNHA = $topGoals->find()->where(["country" => $type])->order(["goals" => "DESC"]);
             $this->set("topGoalsNHA", $topGoalsNHA);
@@ -141,6 +171,8 @@ class ArticlesController extends AppController {
             $view = $article->view;
             $view++;
             $article->view = $view;
+            $newDate = date("Y-m-d H:i:s");
+            $article->updatedDate = $newDate;
             if ($articles->save($article)) {
                 
             } else {
@@ -194,30 +226,30 @@ class ArticlesController extends AppController {
         $typeRank = $page;
         if ($page == 'anh') {
             $this->set('title', "ANH");
-            $this->set('meta_des', "Bóng đá Anh");
-            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Anh");
+            $this->set('des', "Bóng đá Anh");
+            $this->set('keys', "Lịch thi đấu, kết quả bóng đá Anh");
         } else if ($page == 'cup-c1') {
 //            $typeRank = "anh";
             $this->set('title', "C1");
-            $this->set('meta_des', "Bóng đá C1");
-            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá C1");
+            $this->set('des', "Bóng đá C1");
+            $this->set('keys', "Lịch thi đấu, kết quả bóng đá C1");
         } else if ($page == 'tay-ban-nha') {
             $this->set('title', "Tây Ban Nha");
-            $this->set('meta_des', "Bóng đá Tây Ban Nha");
-            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Tây Ban Nha");
+            $this->set('des', "Bóng đá Tây Ban Nha");
+            $this->set('keys', "Lịch thi đấu, kết quả bóng đá Tây Ban Nha");
         } else if ($page == 'italia') {
             $this->set('title', "Ý");
-            $this->set('meta_des', "Bóng đá Ý");
-            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Ý");
+            $this->set('des', "Bóng đá Ý");
+            $this->set('keys', "Lịch thi đấu, kết quả bóng đá Ý");
         } else if ($page == 'duc') {
             $this->set('title', "Đức");
-            $this->set('meta_des', "Bóng đá Đức");
-            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Đức");
+            $this->set('des', "Bóng đá Đức");
+            $this->set('keys', "Lịch thi đấu, kết quả bóng đá Đức");
         } else if ($page == 'phap') {
             $this->set('title', "Pháp");
-            $this->set('meta_des', "Bóng đá Pháp");
-            $this->set('meta_keys', "Lịch thi đấu, kết quả bóng đá Pháp");
-        }else{
+            $this->set('des', "Bóng đá Pháp");
+            $this->set('keys', "Lịch thi đấu, kết quả bóng đá Pháp");
+        } else {
             $this->redirect(['controller' => 'Articles', 'action' => 'index']);
         }
         $activeMenu = $page == null ? 'index' : $page;
@@ -225,11 +257,16 @@ class ArticlesController extends AppController {
         $rank = TableRegistry::get('rank');
         $topGoals = TableRegistry::get('top_goals');
         $rankNHA = $rank->find()->where(["country" => $typeRank])->order(["score" => "DESC"]);
+        $count = 0;
+        foreach ($rankNHA as $row) {
+            $count++;
+        }
+        $this->set("isRank", $count);
         $this->set("rankNHA", $rankNHA);
         $topGoalsNHA = $topGoals->find()->where(["country" => $typeRank])->order(["goals" => "DESC"]);
         $this->set("topGoalsNHA", $topGoalsNHA);
         $listArticles = TableRegistry::get('Articles');
-        $resultsNHA = $listArticles->find()->where(["type" => $page])->limit(12);
+        $resultsNHA = $listArticles->find()->where(["type" => $page])->order(["createdDate" => "DESC"])->limit(10);
 //        $resultsNHA = $listArticles->find()->limit(10);
         $this->set("resultsNHA", $resultsNHA);
         $resultsTop = $listArticles->find()->order(["view" => "DESC"])->limit(5);

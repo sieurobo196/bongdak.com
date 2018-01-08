@@ -26,7 +26,26 @@
                                             </div>
                                             <div class="t-grid top-th-grid">
                                                 <ul>
-                                                    <li><a href="#"><i class="fa fa-clock-o"></i> 1h</a></li>
+                                                    <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
+                                                            $timeArticle = time() - strtotime($row->createdDate);
+                                                            if (round($timeArticle / 60) == 0) {
+                                                                echo "1 phút";
+                                                            } elseif (round($timeArticle / 60) < 60) {
+                                                                echo round($timeArticle / 60) . "phút";
+                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                                                echo "1 giờ";
+                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                                                echo round($timeArticle / 60 / 60) . " giờ";
+                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                                                echo "1 ngày";
+                                                            } 
+//                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
+//                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
+//                                                            }
+                                                            else{
+                                                                echo date("d-m-Y", strtotime($row->createdDate));
+                                                            }
+                                                            ?></a></li>
                                                     <!--<li><a href="#"><i class="fa fa-user"></i> Vivamus nibh</a></li>-->
                                                 </ul>
                                             </div>
@@ -56,8 +75,11 @@
                                         <div class="s-top-grid-left-img">
                                             <div  class="single-img-grid">
                                                 <div><a href="<?php echo $this->Url->build(["controller" => "Articles", "action" => "edit", $id]); ?>"> 
-                                                       edit
-
+                                                        <?php
+                                                        if ($Auth->user()) {
+                                                            echo "edit";
+                                                        }
+                                                        ?>
                                                     </a></div>
                                                 <h2><?php echo $article->title; ?></h2>
                                                 <div class="description-article"><?php echo $article->des_article; ?></div>
@@ -94,6 +116,7 @@
                                     <!-- //today-match -->
 
                                     <!-- player-rank -->
+                                     <?php if ($isRank != 0) { ?>
                                     <div class="player-rank">
                                         <div class="ranking-heading">
                                             <h3>Bảng xếp hạng</h3>
@@ -145,6 +168,7 @@
                                             </table>
                                         </div>
                                     </div>
+                                     <?php } ?>
                                     <!-- //player-rank -->
                                     <!-- ranking -->
                                     <div class="ranking">
