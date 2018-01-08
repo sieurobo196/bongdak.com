@@ -41,3 +41,9 @@ and open the template in the editor.
 .image-article-view{
     margin: 10px 0;
 }
+.col-md-6.two-grid-left {
+    margin: 5px 0;
+}
+.player-rank{
+    margin: 0 !important;
+}

@@ -12,7 +12,8 @@ ul, ol {margin: 0;}
 p {margin: 0;}
 
 html, body{
-    font-family: 'Nunito', sans-serif;
+    /*font-family: 'Nunito', sans-serif;*/
+    font-family: Verdana,Geneva,Tahoma,Arial,Helvetica,sans-serif;
     font-size: 100%;
     overflow-x: hidden;
     background: #f9f9f9;
@@ -1004,7 +1005,7 @@ video {
     color:#3E9CCA;
 }
 .top-grid-left-info p,.top-grid-left-right-info p{
-    color: #B7B7B7;
+    /*color: #B7B7B7;*/
     margin: 1em 0 0 0;
     font-size: .875em;
     line-height: 1.8em;
@@ -1085,7 +1086,7 @@ video {
     padding: 1em;
 }
 .two-grid-text-heading p{
-    color: #B7B7B7;
+    /*color: #B7B7B7;*/
     margin: 1em 0 0 0;
     font-size: .875em;
     line-height: 1.8em;
@@ -1123,7 +1124,7 @@ video {
     margin:.5em 0;
 }
 .two-grids-bottom-grid-info ul li a{
-    color: #B7B7B7;
+    /*color: #B7B7B7;*/
     font-size: .875em;
     text-decoration: none;
 }
