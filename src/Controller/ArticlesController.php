@@ -272,6 +272,124 @@ class ArticlesController extends AppController {
         $resultsTop = $listArticles->find()->order(["view" => "DESC"])->limit(5);
         $this->set("resultsTop", $resultsTop);
     }
+    
+    public function rank($type, $mapUrl) {
+        $this->log("call view $mapUrl", "info");
+        $articles = TableRegistry::get('Articles');
+        $article = $articles->find()->where(['map_url = "' . $mapUrl . '"'])->first();
+        if (empty($article)) {
+            $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        } else {
+            $this->set("article", $article);
+            $this->set("title", $article->title);
+            $this->set("keys", $article->meta_keys);
+            $this->set("des", $article->meta_des);
+            $this->set("id", $article->id);
+            $activeMenu = $type == null ? 'index' : $type;
+            $this->set('activeMenu', $activeMenu);
+            $rank = TableRegistry::get('rank');
+            $topGoals = TableRegistry::get('top_goals');
+            $rankNHA = $rank->find()->where(["country" => $type])->order(["score" => "DESC"]);
+            $count = 0;
+            foreach ($rankNHA as $row) {
+                $count++;
+            }
+            $this->set("isRank", $count);
+            $this->set("rankNHA", $rankNHA);
+            $topGoalsNHA = $topGoals->find()->where(["country" => $type])->order(["goals" => "DESC"]);
+            $this->set("topGoalsNHA", $topGoalsNHA);
+            $resultsTop = $articles->find()->where(["type" => $type])->order(["view" => "DESC"]);
+            $this->set("resultsTop", $resultsTop);
+            $view = $article->view;
+            $view++;
+            $article->view = $view;
+            $newDate = date("Y-m-d H:i:s");
+            $article->updatedDate = $newDate;
+            if ($articles->save($article)) {
+                
+            } else {
+                $this->log("update view fail" + $view, "info");
+            }
+        }
+    }
+    public function schedule($type, $mapUrl) {
+        $this->log("call view $mapUrl", "info");
+        $articles = TableRegistry::get('Articles');
+        $article = $articles->find()->where(['map_url = "' . $mapUrl . '"'])->first();
+        if (empty($article)) {
+            $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        } else {
+            $this->set("article", $article);
+            $this->set("title", $article->title);
+            $this->set("keys", $article->meta_keys);
+            $this->set("des", $article->meta_des);
+            $this->set("id", $article->id);
+            $activeMenu = $type == null ? 'index' : $type;
+            $this->set('activeMenu', $activeMenu);
+            $rank = TableRegistry::get('rank');
+            $topGoals = TableRegistry::get('top_goals');
+            $rankNHA = $rank->find()->where(["country" => $type])->order(["score" => "DESC"]);
+            $count = 0;
+            foreach ($rankNHA as $row) {
+                $count++;
+            }
+            $this->set("isRank", $count);
+            $this->set("rankNHA", $rankNHA);
+            $topGoalsNHA = $topGoals->find()->where(["country" => $type])->order(["goals" => "DESC"]);
+            $this->set("topGoalsNHA", $topGoalsNHA);
+            $resultsTop = $articles->find()->where(["type" => $type])->order(["view" => "DESC"]);
+            $this->set("resultsTop", $resultsTop);
+            $view = $article->view;
+            $view++;
+            $article->view = $view;
+            $newDate = date("Y-m-d H:i:s");
+            $article->updatedDate = $newDate;
+            if ($articles->save($article)) {
+                
+            } else {
+                $this->log("update view fail" + $view, "info");
+            }
+        }
+    }
+    public function topgoal($type, $mapUrl) {
+        $this->log("call view $mapUrl", "info");
+        $articles = TableRegistry::get('Articles');
+        $article = $articles->find()->where(['map_url = "' . $mapUrl . '"'])->first();
+        if (empty($article)) {
+            $this->redirect(['controller' => 'Articles', 'action' => 'index']);
+        } else {
+            $this->set("article", $article);
+            $this->set("title", $article->title);
+            $this->set("keys", $article->meta_keys);
+            $this->set("des", $article->meta_des);
+            $this->set("id", $article->id);
+            $activeMenu = $type == null ? 'index' : $type;
+            $this->set('activeMenu', $activeMenu);
+            $rank = TableRegistry::get('rank');
+            $topGoals = TableRegistry::get('top_goals');
+            $rankNHA = $rank->find()->where(["country" => $type])->order(["score" => "DESC"]);
+            $count = 0;
+            foreach ($rankNHA as $row) {
+                $count++;
+            }
+            $this->set("isRank", $count);
+            $this->set("rankNHA", $rankNHA);
+            $topGoalsNHA = $topGoals->find()->where(["country" => $type])->order(["goals" => "DESC"]);
+            $this->set("topGoalsNHA", $topGoalsNHA);
+            $resultsTop = $articles->find()->where(["type" => $type])->order(["view" => "DESC"]);
+            $this->set("resultsTop", $resultsTop);
+            $view = $article->view;
+            $view++;
+            $article->view = $view;
+            $newDate = date("Y-m-d H:i:s");
+            $article->updatedDate = $newDate;
+            if ($articles->save($article)) {
+                
+            } else {
+                $this->log("update view fail" + $view, "info");
+            }
+        }
+    }
 
 }
 
