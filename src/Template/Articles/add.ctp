@@ -23,10 +23,11 @@ echo $this->Form->end();
     tinymce.init({
         selector: '#content_article',
         height: 500,
-        plugins: 'image code',
-        toolbar1: "newdocument | bold italic underline | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect | image code",
-        toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
-        toolbar3: "table  | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | visualchars visualblocks nonbreaking template pagebreak restoredraft",
+        plugins: 'print preview fullpage powerpaste searchreplace autolink directionality advcode visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount tinymcespellchecker a11ychecker imagetools mediaembed  linkchecker contextmenu colorpicker textpattern help image code',
+        toolbar1: 'formatselect | bold italic underline strikethrough | forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | removeformat',
+        toolbar2: "styleselect formatselect fontselect fontsizeselect | image code",
+        toolbar3: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor  media | insertdatetime preview",
+        toolbar4: "table  | subscript superscript | charmap emoticons | fullscreen | ltr rtl | visualchars visualblocks nonbreaking template pagebreak restoredraft",
         content_css: [
             '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
             '//www.tinymce.com/css/codepen.min.css'],
