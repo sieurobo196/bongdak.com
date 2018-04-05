@@ -64,39 +64,39 @@
                                                 $index++;
                                                 ?>
                                                 <tr id="<?php echo $row->id; ?>">
-                                                    <?php echo $this->Form->create("Articles", array('url' => '/editRecordRank/'.$row->id)); ?>
+                                                    <?php echo $this->Form->create("Ranks", array('url' => '/editRecordRank/'.$row->id)); ?>
                                                     <td class="td-rank">
                                                         <?php echo $index; ?>
                                                     </td>
                                                     <td class="td-rank">
-                                                        <?php echo $row->name_team ?>
+                                                        <?php echo $row->name_team_rank ?>
                                                     </td>
                                                     <td class="td-rank">
 
-                                                        <input  type="number" name="match" id="match" value="<?php echo $row->match; ?>">
+                                                        <input  type="number" name="match" id="match" value="<?php echo $row->match_rank; ?>">
                                                     </td>
                                                     <td class="td-rank">
 
-                                                        <input  type="number" name="match_win" id="match_win" value="<?php echo $row->match_win; ?>">
+                                                        <input  type="number" name="match_win" id="match_win" value="<?php echo $row->match_win_rank; ?>">
                                                     </td>
                                                     <td class="td-rank">
-                                                        <input type="number" name="match_draw" id="match_draw" value="<?php echo $row->match_draw; ?>">
+                                                        <input type="number" name="match_draw" id="match_draw" value="<?php echo $row->match_draw_rank; ?>">
                                                     </td>
                                                     <td class="td-rank">
 
-                                                        <input  type="number" name="match_lose" id="match_lose" value="<?php echo $row->match_lose; ?>">
+                                                        <input  type="number" name="match_lose" id="match_lose" value="<?php echo $row->match_lose_rank; ?>">
                                                     </td>
                                                     <td class="td-rank">
-                                                        <input type="number" name="goals" id="goals" value="<?php echo $row->goals; ?>">
+                                                        <input type="number" name="goals" id="goals" value="<?php echo $row->goals_rank; ?>">
                                                     </td>
                                                     <td class="td-rank">
-                                                        <input type="number" name="goals_lost" id="goals_lost" value="<?php echo $row->goals_lost; ?>">
+                                                        <input type="number" name="goals_lost" id="goals_lost" value="<?php echo $row->goals_lost_rank; ?>">
                                                     </td>
                                                     <td class="td-rank">
-                                                        <?php echo $row->goals . "-" . $row->goals_lost ?>
+                                                        <?php echo $row->goals_rank . "-" . $row->goals_lost_rank ?>
                                                     </td>
                                                     <td class="td-rank">
-                                                        <input type="number" name="score" id="score" value="<?php echo $row->score; ?>">
+                                                        <input type="number" name="score" id="score" value="<?php echo $row->score_rank; ?>">
 
                                                     </td>
                                                     <?php

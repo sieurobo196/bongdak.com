@@ -277,16 +277,16 @@
                                                                     <?php echo $index; ?>
                                                                 </td>
                                                                 <td class="country">
-                                                                    <?php echo $row->name_team ?>
+                                                                    <?php echo $row->name_team_rank ?>
                                                                 </td>
                                                                 <td class="t-points">
-                                                                    <?php echo $row->match ?>
+                                                                    <?php echo $row->match_rank ?>
                                                                 </td>
                                                                 <td class="t-points p-points">
-                                                                    <?php echo $row->score ?>
+                                                                    <?php echo $row->score_rank ?>
                                                                 </td>
                                                                 <td class="t-points p-points">
-                                                                    <?php echo $row->goals - $row->goals_lost ?>
+                                                                    <?php echo $row->goals_rank - $row->goals_lost_rank ?>
                                                                 </td>
                                                             </tr>
                                                         <?php endforeach; ?>
@@ -336,7 +336,7 @@
                                                                     <?php echo $row->name_club ?>
                                                                 </td>
                                                                 <td class="t-points p-points">
-                                                                    <?php echo $row->goals ?>
+                                                                    <?php echo $row->top_goals ?>
                                                                 </td>
                                                             </tr>
                                                             <?php

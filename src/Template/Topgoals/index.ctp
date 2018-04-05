@@ -22,34 +22,16 @@
                                     <table style="width:100%;">
                                         <thead>
                                         <th class="td-rank">
-                                            H
+                                            Hạng
+                                        </th>
+                                        <th class="td-rank">
+                                            Cầu Thủ
                                         </th>
                                         <th class="td-rank">
                                             Đội bóng
                                         </th>
                                         <th class="td-rank">
-                                            ST
-                                        </th>
-                                        <th class="td-rank">
-                                            T
-                                        </th>
-                                        <th class="td-rank">
-                                            H
-                                        </th>
-                                        <th class="td-rank">
-                                            B
-                                        </th>
-                                        <th class="td-rank">
-                                            TG
-                                        </th>
-                                        <th class="td-rank">
-                                            TH
-                                        </th>
-                                        <th class="td-rank">
-                                            HS
-                                        </th>
-                                        <th class="td-rank">
-                                            Đ
+                                            Bàn Thắng
                                         </th>
                                         <?php
                                         if ($Auth->user()) {
@@ -64,41 +46,21 @@
                                                 $index++;
                                                 ?>
                                                 <tr id="<?php echo $row->id; ?>">
-                                                    <?php echo $this->Form->create("Articles", array('url' => '/editRecordRank/'.$row->id)); ?>
+                                                    <?php echo $this->Form->create("Topgoals", array('url' => '/editTopgoal/' . $row->id)); ?>
                                                     <td class="td-rank">
                                                         <?php echo $index; ?>
                                                     </td>
                                                     <td class="td-rank">
-                                                        <?php echo $row->name_team ?>
+                                                        <?php echo $row->name_player; ?>
                                                     </td>
                                                     <td class="td-rank">
-
-                                                        <input  type="number" name="match" id="match" value="<?php echo $row->match; ?>">
+                                                        <?php echo $row->name_club;?>
+                                                        
                                                     </td>
                                                     <td class="td-rank">
-
-                                                        <input  type="number" name="match_win" id="match_win" value="<?php echo $row->match_win; ?>">
+                                                        <input  type="number" name="top_goals" id="top_goals" value="<?php echo $row->top_goals; ?>">
                                                     </td>
-                                                    <td class="td-rank">
-                                                        <input type="number" name="match_draw" id="match_draw" value="<?php echo $row->match_draw; ?>">
-                                                    </td>
-                                                    <td class="td-rank">
-
-                                                        <input  type="number" name="match_lose" id="match_lose" value="<?php echo $row->match_lose; ?>">
-                                                    </td>
-                                                    <td class="td-rank">
-                                                        <input type="number" name="goals" id="goals" value="<?php echo $row->goals; ?>">
-                                                    </td>
-                                                    <td class="td-rank">
-                                                        <input type="number" name="goals_lost" id="goals_lost" value="<?php echo $row->goals_lost; ?>">
-                                                    </td>
-                                                    <td class="td-rank">
-                                                        <?php echo $row->goals . "-" . $row->goals_lost ?>
-                                                    </td>
-                                                    <td class="td-rank">
-                                                        <input type="number" name="score" id="score" value="<?php echo $row->score; ?>">
-
-                                                    </td>
+                                                   
                                                     <?php
                                                     if ($Auth->user()) {
                                                         echo "<td class='td-rank'>";
