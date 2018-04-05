@@ -49,23 +49,25 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-   // examples route and agr
+    // examples route and agr
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'index']);
-    $routes->connect('/*', ['controller' => 'Articles', 'action' => 'single']);
-    $routes->connect('/view/*', ['controller' => 'Articles', 'action' => 'view']);
+    $routes->connect('/:type', ['controller' => 'Articles', 'action' => 'single'],['type'=>'[a-z0-9-]+', 'pass' => ['type']]);
+    $routes->connect('/:type/*', ['controller' => 'Articles', 'action' => 'view'],['type'=>'[a-z0-9-]+', 'pass' => ['type']]);
     $routes->connect('/add', ['controller' => 'Articles', 'action' => 'add']);
-    $routes->connect('/edit/*', ['controller' => 'Articles', 'action' => 'edit']);
-    $routes->connect('/rank/*', ['controller' => 'Articles', 'action' => 'rank']);
+    $routes->connect('/edit/:id', ['controller' => 'Articles', 'action' => 'edit'],['id' => '\d+', 'pass' => ['id']]);
+    $routes->connect('/rank/*', ['controller' => 'Ranks', 'action' => 'index']);
+    $routes->connect('/editRecordRank/*', ['controller' => 'Ranks', 'action' => 'edit']);
     $routes->connect('/schedule/*', ['controller' => 'Articles', 'action' => 'schedule']);
-    $routes->connect('/topgoal/*', ['controller' => 'Articles', 'action' => 'topgoal']);
-    
+    $routes->connect('/topgoal/*', ['controller' => 'Topgoals', 'action' => 'index']);
+    $routes->connect('/editTopgoal/*', ['controller' => 'Topgoals', 'action' => 'edit']);
+
     // example working with database
     $routes->connect('/users/add', ['controller' => 'Users', 'action' => 'add']);
     $routes->connect('/users', ['controller' => 'Users', 'action' => 'index']);
     $routes->connect('/users/edit/*', ['controller' => 'Users', 'action' => 'edit']);
     $routes->connect('/users/delete/*', ['controller' => 'Users', 'action' => 'edit']);
 
-    
+
     // example authenticate 
     $routes->connect('/auth', ['controller' => 'Authexs', 'action' => 'index']);
     $routes->connect('/login', ['controller' => 'Authexs', 'action' => 'login']);
