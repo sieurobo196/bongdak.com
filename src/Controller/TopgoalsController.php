@@ -6,7 +6,7 @@ use App\Controller\AppController;
 use Cake\ORM\TableRegistry;
 use Cake\Datasource\ConnectionManager;
 use Cake\Auth\DefaultPasswordHasher;
-
+use Cake\Log\Log;
 class TopgoalsController extends AppController {
 
     public function index($type) {
@@ -26,11 +26,30 @@ class TopgoalsController extends AppController {
     }
 
     public function add() {
-        
+        $this->log("add goal", "info");
+        $goals = TableRegistry::get("top_goals");
+        $name_player = $this->request->data("name_player");
+        $name_club = $this->request->data("name_club");
+        $top_goals = $this->request->data("top_goals");
+        $country_goal = $this->request->data("country_goal");
+        $goal = $goals->newEntity();
+        $goal->name_player = $name_player;
+        $goal->name_club = $name_club;
+        $goal->top_goals = $top_goals;
+        $goal->country_goal = $country_goal;
+
+        if ($goals->save($goal)) {
+            $this->log("add success " . $goal->country_goal, "info");
+        } else {
+            $this->log("add fail " . $goal->country_goal, "error");
+        }
+        $this->redirect(
+                "/topgoal/" . $goal->country_goal
+        );
     }
 
     public function edit($id) {
-        $this->log("call edit top goal" . $id, "info");
+        $this->log("edit goal" . $id, "info");
         $goals = TableRegistry::get("top_goals");
         $num_goals = $this->request->data("top_goals");
         $this->log($num_goals, "info");

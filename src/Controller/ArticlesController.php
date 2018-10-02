@@ -18,7 +18,7 @@ class ArticlesController extends AppController {
     }
 
     public function add() {
-        $this->log("call add", "info");
+//        $this->log("call add", "info"); 
         $isPost = $this->request->is("post");
         if ($isPost) {
             $title = $this->request->data("title");
@@ -66,11 +66,12 @@ class ArticlesController extends AppController {
         $listAllArticle = $listArticles->find()->order(["createdDate" => "DESC"]);
         $threeArticle = array();
         $resultsNHA = array();
-        $resultsLALIGA = array();
-        $resultsC1 = array();
-        $resultsL1 = array();
-        $resultsDLA = array();
-        $resultsSRA = array();
+        $resultsOther = array();
+//        $resultsLALIGA = array();
+//        $resultsC1 = array();
+//        $resultsL1 = array();
+//        $resultsDLA = array();
+//        $resultsSRA = array();
         $x = 0;
         foreach ($listAllArticle as $value) {
             if ($x == 0) {
@@ -78,53 +79,58 @@ class ArticlesController extends AppController {
             } else if ($x < 4) {
                 array_push($threeArticle, $value);
 //                $this->log(count($threeArticle), "info");
-            } else if ($value->type == "anh" && count($resultsNHA) < 2) {
+            } else if ($value->type == "anh" && count($resultsNHA) < 6) {
                 array_push($resultsNHA, $value);
-            } else if ($value->type == "tay-ban-nha" && count($resultsLALIGA) < 2) {
-                array_push($resultsLALIGA, $value);
-            } else if ($value->type == "cup-c1" && count($resultsC1) < 2) {
-                array_push($resultsC1, $value);
-            } else if ($value->type == "phap" && count($resultsL1) < 2) {
-                array_push($resultsL1, $value);
-            } else if ($value->type == "duc" && count($resultsDLA) < 2) {
-                array_push($resultsDLA, $value);
-            } else if ($value->type == "italia" && count($resultsSRA) < 2) {
-                array_push($resultsSRA, $value);
+            } else if ($value->type != "anh" && count($resultsOther) < 8) {
+                array_push($resultsOther, $value);
             }
+//            else if ($value->type == "tay-ban-nha" && count($resultsLALIGA) < 2) {
+//                array_push($resultsLALIGA, $value);
+//            } else if ($value->type == "cup-c1" && count($resultsC1) < 2) {
+//                array_push($resultsC1, $value);
+//            } else if ($value->type == "phap" && count($resultsL1) < 2) {
+//                array_push($resultsL1, $value);
+//            } else if ($value->type == "duc" && count($resultsDLA) < 2) {
+//                array_push($resultsDLA, $value);
+//            } else if ($value->type == "italia" && count($resultsSRA) < 2) {
+//                array_push($resultsSRA, $value);
+//            }
 
             $x++;
         }
 
         $this->set("results", $threeArticle);
         // list articles top
-        $resultsTop = $listArticles->find()->order(["view" => "DESC"])->limit(10);
+        $resultsTop = $listArticles->find()->order(["createdDate" => "DESC"])->limit(10);
         $this->set("resultsTop", $resultsTop);
         // list articles NHA
         $this->set("resultsNHA", $resultsNHA);
         //list articles lalig
-        $this->set("resultsLALIGA", $resultsLALIGA);
-        //list articles C1
-        $this->set("resultsC1", $resultsC1);
-        //list articles C1
-        $this->set("resultsL1", $resultsL1);
-        //list articles C1
-        $this->set("resultsDLA", $resultsDLA);
-        //list articles C1
-        $this->set("resultsSRA", $resultsSRA);
+        $this->set("resultsOther", $resultsOther);
+//        //list articles lalig
+//        $this->set("resultsLALIGA", $resultsLALIGA);
+//        //list articles C1
+//        $this->set("resultsC1", $resultsC1);
+//        //list articles C1
+//        $this->set("resultsL1", $resultsL1);
+//        //list articles C1
+//        $this->set("resultsDLA", $resultsDLA);
+//        //list articles C1
+//        $this->set("resultsSRA", $resultsSRA);
         // articles newest
-//        $articleTop = $listArticles->find()->order(["createdDate" => "DESC"])->first();
-//        $this->set("articleTop", $articleTop);
+        $articleTop = $listArticles->find()->order(["createdDate" => "DESC"])->first();
+        $this->set("articleTop", $articleTop);
         //table rank
         $rank = TableRegistry::get("Rank");
-        $rankNHA = $rank->find()->where(["country_rank" => "anh"])->order(["score_rank" => "DESC"]);
+        $rankNHA = $rank->find()->where(["country_rank" => "anh"])->order(["score_rank" => "DESC"])->order(["goals_rank-goals_lost_rank" => "DESC"]);
         $this->set("rankNHA", $rankNHA);
         // top goal
         $topGoals = TableRegistry::get("top_goals");
         $topGoalsNHA = $topGoals->find()->order(["top_goals" => "DESC"]);
         $this->set("topGoalsNHA", $topGoalsNHA);
         // schedule
-        $schedule = TableRegistry::get("schedule");
-        $scheduleNHA = $schedule->find();
+        $schedule = TableRegistry::get("schedules");
+        $scheduleNHA = $schedule->find()->where(["is_pre_start" => 1, "is_done" => 0]);
         $this->set("scheduleNHA", $scheduleNHA);
 
         $this->set("title", "Bóng đá K");
@@ -134,8 +140,14 @@ class ArticlesController extends AppController {
 
     public function view($type, $mapUrl) {
         $this->log("call view " . $type . "/" . $mapUrl, "info");
+        $conSelect = "";
+        if ($type == 'anh') {
+            $conSelect = "country_rank = 'anh'";
+        } else {
+            $conSelect = "country_rank != 'anh'";
+        }
         $articles = TableRegistry::get("Articles");
-        $article = $articles->find()->where(['map_url = "' . $mapUrl . '"'])->first();
+        $article = $articles->find()->where(['map_url = "' . $mapUrl . '"'])->order(["createdDate" => "DESC"])->first();
         if (empty($article)) {
             $this->redirect(["controller" => "Articles", "action" => "index"]);
         } else {
@@ -148,7 +160,7 @@ class ArticlesController extends AppController {
             $this->set("activeMenu", $activeMenu);
             $rank = TableRegistry::get("rank");
             $topGoals = TableRegistry::get("top_goals");
-            $rankNHA = $rank->find()->where(["country_rank" => $type])->order(["score_rank" => "DESC"]);
+            $rankNHA = $rank->find()->where([$conSelect])->order(["score_rank" => "DESC"])->order(["goals_rank-goals_lost_rank" => "DESC"]);
             $count = 0;
             foreach ($rankNHA as $row) {
                 $count++;
@@ -157,18 +169,22 @@ class ArticlesController extends AppController {
             $this->set("rankNHA", $rankNHA);
             $topGoalsNHA = $topGoals->find()->where(["country_goal" => $type])->order(["top_goals" => "DESC"]);
             $this->set("topGoalsNHA", $topGoalsNHA);
-            $resultsTop = $articles->find()->where(["type" => $type])->order(["view" => "DESC"]);
+            $resultsTop = $articles->find()->where(["type" => $type])->order(["createdDate" => "DESC"])->limit(10);
             $this->set("resultsTop", $resultsTop);
-            $view = $article->view;
-            $view++;
-            $article->view = $view;
-            $newDate = date("Y-m-d H:i:s");
-            $article->updatedDate = $newDate;
-            if ($articles->save($article)) {
-                
-            } else {
-                $this->log("view fail" . $view, "error");
-            }
+            // schedule
+            $schedule = TableRegistry::get("schedules");
+            $scheduleNHA = $schedule->find()->where(["country" => $type, "is_pre_start" => 1, "is_done" => 0]);
+            $this->set("scheduleNHA", $scheduleNHA);
+//            $view = $article->view;
+//            $view++;
+//            $article->view = $view;
+//            $newDate = date("Y-m-d H:i:s");
+//            $article->updatedDate = $newDate;
+//            if ($articles->save($article)) {
+//                
+//            } else {
+//                $this->log("view fail" . $view, "error");
+//            }
         }
     }
 
@@ -229,38 +245,124 @@ class ArticlesController extends AppController {
         }
     }
 
+    public function delete($id) {
+        $this->log("call delete ", "info");
+        $articles = TableRegistry::get("Articles");
+        $article = $articles->get($id);
+        $articles->delete($article);
+
+        $this->redirect(
+                "/"
+        );
+    }
+
     public function single($page) {
-        $this->log("call single " . $page, "info");
+        $this->log("call single " . date("Y-m-d H:i:s") . " " . $page, "info");
         $typeRank = $page;
+        $conSelect = "";
         if ($page == "anh") {
             $this->set("title", "ANH");
             $this->set("des", "Bóng đá Anh");
             $this->set("keys", "Lịch thi đấu, kết quả bóng đá Anh");
-        } else if ($page == "cup-c1") {
+            $conSelect = "type = 'anh'";
+        } else {
+            $this->set("title", "Giải Đấu khác");
+            $this->set("des", "Bóng đá Thế Giới");
+            $this->set("keys", "Lịch thi đấu, kết quả bóng đá Thế giới");
+            $conSelect = "type != 'anh'";
+        }
+
+//        else if ($page == "world-cup") {
+//            $this->set("title", "WORLD CUP 2018");
+//            $this->set("des", "World cup 2018");
+//            $this->set("keys", "Lịch thi đấu, kết quả bóng đá World cup 2018");
+//        } else if ($page == "cup-c1") {
+////            $typeRank = "anh";
+//            $this->set("title", "C1");
+//            $this->set("des", "Bóng đá C1");
+//            $this->set("keys", "Lịch thi đấu, kết quả bóng đá C1");
+//        } else if ($page == "tay-ban-nha") {
+//            $this->set("title", "Tây Ban Nha");
+//            $this->set("des", "Bóng đá Tây Ban Nha");
+//            $this->set("keys", "Lịch thi đấu, kết quả bóng đá Tây Ban Nha");
+//        } else if ($page == "italia") {
+//            $this->set("title", "Ý");
+//            $this->set("des", "Bóng đá Ý");
+//            $this->set("keys", "Lịch thi đấu, kết quả bóng đá Ý");
+//        } else if ($page == "duc") {
+//            $this->set("title", "Đức");
+//            $this->set("des", "Bóng đá Đức");
+//            $this->set("keys", "Lịch thi đấu, kết quả bóng đá Đức");
+//        } else if ($page == "phap") {
+//            $this->set("title", "Pháp");
+//            $this->set("des", "Bóng đá Pháp");
+//            $this->set("keys", "Lịch thi đấu, kết quả bóng đá Pháp");
+//        } else {
+//            $this->redirect(["controller" => "Articles", "action" => "index"]);
+//        }
+        $activeMenu = $page == null ? "index" : $page;
+        $this->set("activeMenu", $activeMenu);
+        $rank = TableRegistry::get("Rank");
+        $topGoals = TableRegistry::get("top_goals");
+        $rankNHA = $rank->find()->where(["country_rank" => 'anh'])->order(["score_rank" => "DESC"])->order(["goals_rank-goals_lost_rank" => "DESC"]);
+        $count = 0;
+        foreach ($rankNHA as $row) {
+            $count++;
+        }
+        $this->set("isRank", $count);
+        $this->set("rankNHA", $rankNHA);
+        $topGoalsNHA = $topGoals->find()->where(["country_goal" => 'anh'])->order(["top_goals" => "DESC"]);
+        $this->set("topGoalsNHA", $topGoalsNHA);
+        $listArticles = TableRegistry::get("Articles");
+        $resultsNHA = $listArticles->find()->where([$conSelect])->order(["createdDate" => "DESC"])->limit(20);
+//        $resultsNHA = $listArticles->find()->limit(10);
+        $this->set("resultsNHA", $resultsNHA);
+        $resultsTop = $listArticles->find()->order(["createdDate" => "DESC"])->limit(15);
+        $this->set("resultsTop", $resultsTop);
+
+        // schedule
+        $schedule = TableRegistry::get("schedules");
+        $scheduleNHA = $schedule->find()->where(["is_pre_start" => 1, "is_done" => 0])->order(["id" => "DESC"]);
+        $this->set("scheduleNHA", $scheduleNHA);
+    }
+
+    public function pagination($type, $index) {
+        $this->log("call single " . date("Y-m-d H:i:s") . " " . $type, "info");
+        $this->log("call single " . date("Y-m-d H:i:s") . " " . $index, "info");
+        $typeRank = $type;
+        if ($type == "anh") {
+            $this->set("title", "ANH");
+            $this->set("des", "Bóng đá Anh");
+            $this->set("keys", "Lịch thi đấu, kết quả bóng đá Anh");
+        } else if ($type == "world-cup") {
+            $this->set("title", "WORLD CUP 2018");
+            $this->set("des", "World cup 2018");
+            $this->set("keys", "Lịch thi đấu, kết quả bóng đá World cup 2018");
+        } else if ($type == "cup-c1") {
 //            $typeRank = "anh";
             $this->set("title", "C1");
             $this->set("des", "Bóng đá C1");
             $this->set("keys", "Lịch thi đấu, kết quả bóng đá C1");
-        } else if ($page == "tay-ban-nha") {
+        } else if ($type == "tay-ban-nha") {
             $this->set("title", "Tây Ban Nha");
             $this->set("des", "Bóng đá Tây Ban Nha");
             $this->set("keys", "Lịch thi đấu, kết quả bóng đá Tây Ban Nha");
-        } else if ($page == "italia") {
+        } else if ($type == "italia") {
             $this->set("title", "Ý");
             $this->set("des", "Bóng đá Ý");
             $this->set("keys", "Lịch thi đấu, kết quả bóng đá Ý");
-        } else if ($page == "duc") {
+        } else if ($type == "duc") {
             $this->set("title", "Đức");
             $this->set("des", "Bóng đá Đức");
             $this->set("keys", "Lịch thi đấu, kết quả bóng đá Đức");
-        } else if ($page == "phap") {
+        } else if ($type == "phap") {
             $this->set("title", "Pháp");
             $this->set("des", "Bóng đá Pháp");
             $this->set("keys", "Lịch thi đấu, kết quả bóng đá Pháp");
         } else {
             $this->redirect(["controller" => "Articles", "action" => "index"]);
         }
-        $activeMenu = $page == null ? "index" : $page;
+        $activeMenu = $type == null ? "index" : $type;
         $this->set("activeMenu", $activeMenu);
         $rank = TableRegistry::get("Rank");
         $topGoals = TableRegistry::get("top_goals");
@@ -274,10 +376,10 @@ class ArticlesController extends AppController {
         $topGoalsNHA = $topGoals->find()->where(["country_goal" => $typeRank])->order(["top_goals" => "DESC"]);
         $this->set("topGoalsNHA", $topGoalsNHA);
         $listArticles = TableRegistry::get("Articles");
-        $resultsNHA = $listArticles->find()->where(["type" => $page])->order(["createdDate" => "DESC"])->limit(10);
+        $resultsNHA = $listArticles->find()->where(["type" => $type])->order(["createdDate" => "DESC"])->limit(10);
 //        $resultsNHA = $listArticles->find()->limit(10);
         $this->set("resultsNHA", $resultsNHA);
-        $resultsTop = $listArticles->find()->order(["view" => "DESC"])->limit(5);
+        $resultsTop = $listArticles->find()->order(["createdDate" => "DESC"])->limit(10);
         $this->set("resultsTop", $resultsTop);
     }
 
@@ -307,21 +409,21 @@ class ArticlesController extends AppController {
         $goals = $this->request->data("goals");
         $goal_lost = $this->request->data("goals_lost");
         $score = $this->request->data("score");
-        $this->log($match, "info");
-        $this->log($match_win, "info");
-        $this->log($match_draw, "info");
-        $this->log($match_lose, "info");
-        $this->log($goals, "info");
-        $this->log($goal_lost, "info");
-        $this->log($score, "info");
+//        $this->log($match, "info");
+//        $this->log($match_win, "info");
+//        $this->log($match_draw, "info");
+//        $this->log($match_lose, "info");
+//        $this->log($goals, "info");
+//        $this->log($goal_lost, "info");
+//        $this->log($score, "info");
         $rank = $ranks->get($id);
-        $this->log($rank->match, "info");
-        $this->log($rank->match_win, "info");
-        $this->log($rank->match_draw, "info");
-        $this->log($rank->match_lose, "info");
-        $this->log($rank->goals, "info");
-        $this->log($rank->goals_lost, "info");
-        $this->log($rank->score, "info");
+//        $this->log($rank->match, "info");
+//        $this->log($rank->match_win, "info");
+//        $this->log($rank->match_draw, "info");
+//        $this->log($rank->match_lose, "info");
+//        $this->log($rank->goals, "info");
+//        $this->log($rank->goals_lost, "info");
+//        $this->log($rank->score, "info");
         $rank->match_rank = $match;
         $rank->match_win_rank = $match_win;
         $rank->match_draw_rank = $match_draw;
@@ -330,7 +432,7 @@ class ArticlesController extends AppController {
         $rank->goals_lost_rank = $goal_lost;
         $rank->score_rank = $score;
         if ($ranks->save($rank)) {
-            $this->log("udpated " . $rank->country_rank, "info");
+//            $this->log("udpated " . $rank->country_rank, "info");
         } else {
             $this->log("updated fail " . $rank->country_rank, "error");
         }
@@ -343,22 +445,22 @@ class ArticlesController extends AppController {
         
     }
 
-    public function schedule($type) {
-        $this->log("call view $type", "info");
-        $this->set("activeMenu", "index");
-        $this->set("title", "Bóng đá K");
-        $this->set("keys", "bong da, tin bong da,tin nhanh bóng đá, lịch thi đấu, bảng xếp hạng, tin chuyển nhượng, hậu trường cầu thủ, tin tức bóng đá");
-        $this->set("des", "BongDaK.com - cập nhật liên tục tin nhanh bóng đá, lịch thi đấu, kết quả, bảng xếp hạng tất cả các giải bóng đá, tin chuyển nhượng, hậu trường cầu thủ.");
-    }
-
-    public function topgoal($type) {
-        $this->log("call view $type", "info");
-        $this->set("activeMenu", "index");
-        $this->set("title", "Bóng đá K");
-        $this->set("keys", "bong da, tin bong da,tin nhanh bóng đá, lịch thi đấu, bảng xếp hạng, tin chuyển nhượng, hậu trường cầu thủ, tin tức bóng đá");
-        $this->set("des", "BongDaK.com - cập nhật liên tục tin nhanh bóng đá, lịch thi đấu, kết quả, bảng xếp hạng tất cả các giải bóng đá, tin chuyển nhượng, hậu trường cầu thủ.");
-    }
-
+//
+//    public function schedule($type) {
+//        $this->log("call view $type", "info");
+//        $this->set("activeMenu", "index");
+//        $this->set("title", "Bóng đá K");
+//        $this->set("keys", "bong da, tin bong da,tin nhanh bóng đá, lịch thi đấu, bảng xếp hạng, tin chuyển nhượng, hậu trường cầu thủ, tin tức bóng đá");
+//        $this->set("des", "BongDaK.com - cập nhật liên tục tin nhanh bóng đá, lịch thi đấu, kết quả, bảng xếp hạng tất cả các giải bóng đá, tin chuyển nhượng, hậu trường cầu thủ.");
+//    }
+//
+//    public function topgoal($type) {
+//        $this->log("call view $type", "info");
+//        $this->set("activeMenu", "index");
+//        $this->set("title", "Bóng đá K");
+//        $this->set("keys", "bong da, tin bong da,tin nhanh bóng đá, lịch thi đấu, bảng xếp hạng, tin chuyển nhượng, hậu trường cầu thủ, tin tức bóng đá");
+//        $this->set("des", "BongDaK.com - cập nhật liên tục tin nhanh bóng đá, lịch thi đấu, kết quả, bảng xếp hạng tất cả các giải bóng đá, tin chuyển nhượng, hậu trường cầu thủ.");
+//    }
 }
 
 ?>
