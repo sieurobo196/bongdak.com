@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Routes configuration
  *
@@ -17,7 +18,6 @@
  * @link          https://cakephp.org CakePHP(tm) Project
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
 use Cake\Core\Plugin;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
@@ -51,15 +51,20 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     // examples route and agr
     $routes->connect('/', ['controller' => 'Articles', 'action' => 'index']);
-    $routes->connect('/:type', ['controller' => 'Articles', 'action' => 'single'],['type'=>'[a-z0-9-]+', 'pass' => ['type']]);
-    $routes->connect('/:type/*', ['controller' => 'Articles', 'action' => 'view'],['type'=>'[a-z0-9-]+', 'pass' => ['type']]);
+    $routes->connect('/:type', ['controller' => 'Articles', 'action' => 'single'], ['type' => '[a-z0-9-]+', 'pass' => ['type']]);
+    $routes->connect('/:type/*', ['controller' => 'Articles', 'action' => 'view'], ['type' => '[a-z0-9-]+', 'pass' => ['type']]);
     $routes->connect('/add', ['controller' => 'Articles', 'action' => 'add']);
-    $routes->connect('/edit/:id', ['controller' => 'Articles', 'action' => 'edit'],['id' => '\d+', 'pass' => ['id']]);
+    $routes->connect('/edit/:id', ['controller' => 'Articles', 'action' => 'edit'], ['id' => '\d+', 'pass' => ['id']]);
+    $routes->connect('/delete/:id', ['controller' => 'Articles', 'action' => 'delete'], ['id' => '\d+', 'pass' => ['id']]);
     $routes->connect('/rank/*', ['controller' => 'Ranks', 'action' => 'index']);
     $routes->connect('/editRecordRank/*', ['controller' => 'Ranks', 'action' => 'edit']);
-    $routes->connect('/schedule/*', ['controller' => 'Articles', 'action' => 'schedule']);
+    $routes->connect('/schedule/*', ['controller' => 'Schedules', 'action' => 'index']);
+    $routes->connect('/editRecordSchedule/*', ['controller' => 'Schedules', 'action' => 'edit']);
+    $routes->connect('/addRecordSchedule', ['controller' => 'Schedules', 'action' => 'add']);
     $routes->connect('/topgoal/*', ['controller' => 'Topgoals', 'action' => 'index']);
     $routes->connect('/editTopgoal/*', ['controller' => 'Topgoals', 'action' => 'edit']);
+    $routes->connect('/addTopgoal', ['controller' => 'Topgoals', 'action' => 'add']);
+    $routes->connect('/:pagegination/:index', ['controller' => 'Articles', 'action' => 'single'], ['pagegination' => '[a-z-]', 'pass' => ['pagegination']], ['index' => '[0-9]', 'pass' => ['index']]);
 
     // example working with database
     $routes->connect('/users/add', ['controller' => 'Users', 'action' => 'add']);
