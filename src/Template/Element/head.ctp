@@ -26,31 +26,22 @@ $this->layout = false;
         <link href='//fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
         <!--// webfonts --> 
-        <!-- Meters graphs -->
-        <script src="<?php echo $this->request->webroot . "js" ?>/jquery-1.11.1.min.js"></script>
-        <!-- Placed js at the end of the document so the pages load faster -->
-        <script src="<?php echo $this->request->webroot . "js" ?>/modernizr.custom.js"></script>
-        <!--pop-up-->
-        <script src="<?php echo $this->request->webroot . "js" ?>/menu_jquery.js"></script>
-        <!--//pop-up-->	
+
+        <script src="<?php echo $this->request->webroot . "js" ?>/jquery-1.11.1.min.js"></script>	
         <script src="<?php echo $this->request->webroot . "js" ?>/jquery.nicescroll.js"></script>
-    
-        <!-- Bootstrap Core JavaScript -->
+
+        <!--Bootstrap Core JavaScript--> 
         <script src="<?php echo $this->request->webroot . "js" ?>/bootstrap.min.js"></script>
-        <!--pop-up-->
-        <script src="<?php echo $this->request->webroot . "js" ?>/menu_jquery.js"></script>
-        
-        <script src="<?php echo $this->request->webroot . "js" ?>/easyResponsiveTabs.js"></script>
-        
-        <script src="<?php echo $this->request->webroot . "js" ?>/simplePlayer.js"></script>
-        <!--//pop-up-->	
-        <script type="text/javascript">
-		$(document).ready(function () {
-			$('#horizontalTab').easyResponsiveTabs({
-				type: 'default', //Types: default, vertical, accordion           
-				width: 'auto', //auto or any width like 600px
-				fit: true   // 100% fit in a container
-			});
-		});
-	</script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120987257-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-120987257-1');
+        </script>
+
     </head> 

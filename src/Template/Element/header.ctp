@@ -3,7 +3,7 @@
         <a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>
     </div>
     <div class="top-logo">
-        <h1><a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "index"]); ?>">Live Info</a></h1>
+        <h1><a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "index"]); ?>">BongdaK</a></h1>
     </div>
     <div class="top-search">
         <form>
@@ -86,6 +86,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        console.log(new Date());
         // Create two variable with the names of the months and days in an array
         var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -117,7 +118,7 @@
             // Add a leading zero to the hours value
             $("#hours").html((hours < 10 ? "0" : "") + hours);
         }, 1000);
-
+        console.log(new Date());
     });
 </script>
 <script src="<?php echo $this->request->webroot . "js" ?>/scripts.js"></script>

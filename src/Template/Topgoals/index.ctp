@@ -18,28 +18,61 @@
                                 <div class="ranking-heading">
                                     <h3>Bảng xếp hạng</h3>
                                 </div>
-                                <?php if ($isRank != 0) { ?>
-                                    <table style="width:100%;">
-                                        <thead>
-                                        <th class="td-rank">
-                                            Hạng
-                                        </th>
-                                        <th class="td-rank">
-                                            Cầu Thủ
-                                        </th>
-                                        <th class="td-rank">
-                                            Đội bóng
-                                        </th>
-                                        <th class="td-rank">
-                                            Bàn Thắng
-                                        </th>
-                                        <?php
-                                        if ($Auth->user()) {
-                                            echo "<th class='td-rank'><th>";
-                                        }
-                                        ?>
-                                        </thead>
-                                        <tbody>
+
+                                <table style="width:100%;">
+                                    <thead>
+                                    <th class="td-rank">
+                                        Rank
+                                    </th>
+                                    <th class="td-rank">
+                                        Cầu Thủ
+                                    </th>
+                                    <th class="td-rank">
+                                        Đội bóng
+                                    </th>
+                                    <th class="td-rank">
+                                        Bàn Thắng
+                                    </th>
+                                    <th class="td-rank">
+                                        Country
+                                    </th>
+                                    <?php
+                                    if ($Auth->user()) {
+                                        echo "<th class='td-rank'><th>";
+                                    }
+                                    ?>
+                                    </thead>
+                                    <tbody>
+                                        <tr id="addGoal">
+                                            <?php echo $this->Form->create("Topgoals", array('url' => '/addTopgoal')); ?>
+                                            <td class="td-rank">
+                                                ADD
+                                            </td>
+                                            <td class="td-rank">
+                                                <input  type="text" name="name_player" id="name_player" >
+                                            </td>
+                                            <td class="td-rank">
+                                                <input  type="text" name="name_club" id="name_club" >
+
+                                            </td>
+                                            <td class="td-rank">
+                                                <input  type="number" name="top_goals" id="top_goals" >
+                                            </td>
+                                            <td class="td-rank">
+                                                <input  type="text" name="country_goal" id="country_goal">
+                                            </td>
+
+
+                                            <?php
+                                            if ($Auth->user()) {
+                                                echo "<td class='td-rank'>";
+                                                echo "<button type='submit'>Add</button>";
+                                                echo "<td>";
+                                            }
+                                            ?>
+                                            <?php echo $this->Form->end(); ?>
+                                        </tr>
+                                        <?php if ($isRank != 0) { ?>
                                             <?php
                                             $index = 0;
                                             foreach ($rankNHA as $row):
@@ -51,16 +84,20 @@
                                                         <?php echo $index; ?>
                                                     </td>
                                                     <td class="td-rank">
-                                                        <?php echo $row->name_player; ?>
+                                                        <input  type="text" name="name_player" id="name_player" value="<?php echo $row->name_player; ?>">
                                                     </td>
                                                     <td class="td-rank">
-                                                        <?php echo $row->name_club;?>
-                                                        
+                                                        <input  type="text" name="name_club" id="name_club" value="<?php echo $row->name_club; ?>">
+
                                                     </td>
                                                     <td class="td-rank">
                                                         <input  type="number" name="top_goals" id="top_goals" value="<?php echo $row->top_goals; ?>">
                                                     </td>
-                                                   
+                                                    <td class="td-rank">
+                                                        <input  type="text" name="country_goal" id="country_goal" value="<?php echo $row->country_goal; ?>">
+                                                    </td>
+
+
                                                     <?php
                                                     if ($Auth->user()) {
                                                         echo "<td class='td-rank'>";
@@ -71,9 +108,11 @@
                                                     <?php echo $this->Form->end(); ?>
                                                 </tr>
                                             <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                <?php } ?>
+                                        <?php } ?>
+
+                                    </tbody>
+                                </table>
+
                             </div>
                             <!-- //player-rank -->
                         </div>
