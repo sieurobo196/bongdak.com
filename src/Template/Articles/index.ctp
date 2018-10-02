@@ -28,30 +28,30 @@
                                         <div class="col-md-4 top-grid-left-info">
                                             <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $articleTop->type, $articleTop->map_url]); ?>"><?php echo "$articleTop->title"; ?></a>
                                             <p><?php echo "$articleTop->des_article"; ?></p>
-                                            <div class="t-grid">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-clock-o"></i> <?php
-                                                            $timeArticle = time() - strtotime($articleTop->createdDate);
+                                            <!--                                            <div class="t-grid">
+                                                                                            <ul>
+                                                                                                <li><a href="#"><i class="fa fa-clock-o"></i> <?php
+                                            $timeArticle = time() - strtotime($articleTop->createdDate);
 //                                                            echo $timeArticle;
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
-                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
-                                                            }else{
-                                                                echo date("d-m-Y", strtotime($articleTop->createdDate));
-                                                            }
-                                                            ?></a></li>
-                                                    <!--<li><a href="#"><i class="fa fa-user"></i> Tom</a></li>-->
-                                                </ul>
-                                            </div>
+                                            if (round($timeArticle / 60) == 0) {
+                                                echo "1 phút";
+                                            } elseif (round($timeArticle / 60) < 60) {
+                                                echo round($timeArticle / 60) . "phút";
+                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                                echo "1 giờ";
+                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                                echo round($timeArticle / 60 / 60) . " giờ";
+                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                                echo "1 ngày";
+                                            } elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
+                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
+                                            } else {
+                                                echo date("d-m-Y", strtotime($articleTop->createdDate));
+                                            }
+                                            ?></a></li>
+                                                                                                <li><a href="#"><i class="fa fa-user"></i> Tom</a></li>
+                                                                                            </ul>
+                                                                                        </div>-->
                                         </div>
                                         <div class="clearfix"> </div>
                                     </div>
@@ -68,32 +68,32 @@
                                                         <div class="three-grid-text-heading">
                                                             <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
                                                         </div>
-                                                        <div class="t-grid author-grid">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-clock-o"></i> 
-                                                                    <?php
-                                                            $timeArticle = time() - strtotime($row->createdDate);
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } 
+                                                        <!--                                                        <div class="t-grid author-grid">
+                                                                                                                    <ul>
+                                                                                                                        <li><a href="#"><i class="fa fa-clock-o"></i> 
+                                                        <?php
+                                                        $timeArticle = time() - strtotime($row->createdDate);
+                                                        if (round($timeArticle / 60) == 0) {
+                                                            echo "1 phút";
+                                                        } elseif (round($timeArticle / 60) < 60) {
+                                                            echo round($timeArticle / 60) . "phút";
+                                                        } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                                            echo "1 giờ";
+                                                        } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                                            echo round($timeArticle / 60 / 60) . " giờ";
+                                                        } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                                            echo "1 ngày";
+                                                        }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
-                                                                echo date("d-m-Y", strtotime($row->createdDate));
-                                                            }
-                                                            ?>
-                                                                    </a></li>
-                                                            </ul>
-                                                        </div>
+                                                        else {
+                                                            echo date("d-m-Y", strtotime($row->createdDate));
+                                                        }
+                                                        ?>
+                                                                                                                            </a></li>
+                                                                                                                    </ul>
+                                                                                                                </div>-->
                                                     </div>
                                                 </div>
                                             </div>
@@ -117,30 +117,30 @@
                                                             <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
                                                             <p><?php echo $row->des_article ?> </p>
                                                         </div>
-                                                        <div class="t-grid author-grid two-grid-author">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-clock-o"></i> <?php
-                                                            $timeArticle = time() - strtotime($row->createdDate);
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } 
+                                                        <!--                                                        <div class="t-grid author-grid two-grid-author">
+                                                                                                                    <ul>
+                                                                                                                        <li><a href="#"><i class="fa fa-clock-o"></i> <?php
+                                                        $timeArticle = time() - strtotime($row->createdDate);
+                                                        if (round($timeArticle / 60) == 0) {
+                                                            echo "1 phút";
+                                                        } elseif (round($timeArticle / 60) < 60) {
+                                                            echo round($timeArticle / 60) . "phút";
+                                                        } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                                            echo "1 giờ";
+                                                        } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                                            echo round($timeArticle / 60 / 60) . " giờ";
+                                                        } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                                            echo "1 ngày";
+                                                        }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
-                                                                echo date("d-m-Y", strtotime($row->createdDate));
-                                                            }
-                                                            ?></a></li>
-                                                            </ul>
-                                                        </div>
+                                                        else {
+                                                            echo date("d-m-Y", strtotime($row->createdDate));
+                                                        }
+                                                        ?></a></li>
+                                                                                                                    </ul>
+                                                                                                                </div>-->
                                                     </div>
                                                 </div>
                                             </div>
@@ -150,8 +150,8 @@
                                         <div class="clearfix"> </div>
                                     </div>	
                                     <div class="two-grids">
-                                        <div class="menu-title">C1</div>
-                                        <?php foreach ($resultsC1 as $row): ?>
+                                        <div class="menu-title">Các giải đấu khác</div>
+                                        <?php foreach ($resultsOther as $row): ?>
                                             <div class="col-md-6 two-grid-left">
                                                 <div class="two-grid-info">
                                                     <div class="two-grid-img">
@@ -162,30 +162,30 @@
                                                             <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
                                                             <p><?php echo $row->des_article; ?> </p>
                                                         </div>
-                                                        <div class="t-grid author-grid two-grid-author">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
-                                                            $timeArticle = time() - strtotime($row->createdDate);
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } 
+                                                        <!--                                                        <div class="t-grid author-grid two-grid-author">
+                                                                                                                    <ul>
+                                                                                                                        <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
+                                                        $timeArticle = time() - strtotime($row->createdDate);
+                                                        if (round($timeArticle / 60) == 0) {
+                                                            echo "1 phút";
+                                                        } elseif (round($timeArticle / 60) < 60) {
+                                                            echo round($timeArticle / 60) . "phút";
+                                                        } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                                            echo "1 giờ";
+                                                        } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                                            echo round($timeArticle / 60 / 60) . " giờ";
+                                                        } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                                            echo "1 ngày";
+                                                        }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
-                                                                echo date("d-m-Y", strtotime($row->createdDate));
-                                                            }
-                                                            ?></a></li>
-                                                            </ul>
-                                                        </div>
+                                                        else {
+                                                            echo date("d-m-Y", strtotime($row->createdDate));
+                                                        }
+                                                        ?></a></li>
+                                                                                                                    </ul>
+                                                                                                                </div>-->
                                                     </div>
                                                 </div>
                                             </div>
@@ -194,186 +194,186 @@
                                         ?>
                                         <div class="clearfix"> </div>
                                     </div>
-                                    <div class="two-grids">
-                                        <div class="menu-title">LALIGA</div>
-                                        <?php foreach ($resultsLALIGA as $row): ?>
-                                            <div class="col-md-6 two-grid-left">
-                                                <div class="two-grid-info">
-                                                    <div class="two-grid-img">
-                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
-                                                    </div>
-                                                    <div class="two-grid-text">
-                                                        <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
-                                                            <p><?php echo $row->des_article; ?> </p>
-                                                        </div>
-                                                        <div class="t-grid author-grid two-grid-author">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
-                                                            $timeArticle = time() - strtotime($row->createdDate);
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } 
+                                    <!--                                    <div class="two-grids">
+                                                                            <div class="menu-title">LALIGA</div>
+                                    <?php foreach ($resultsLALIGA as $row): ?>
+                                                                                    <div class="col-md-6 two-grid-left">
+                                                                                        <div class="two-grid-info">
+                                                                                            <div class="two-grid-img">
+                                                                                                <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                                                            </div>
+                                                                                            <div class="two-grid-text">
+                                                                                                <div class="three-grid-text-heading two-grid-text-heading">
+                                                                                                    <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                                                                    <p><?php echo $row->des_article; ?> </p>
+                                                                                                </div>
+                                                                                                <div class="t-grid author-grid two-grid-author">
+                                                                                                    <ul>
+                                                                                                        <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
+                                        $timeArticle = time() - strtotime($row->createdDate);
+                                        if (round($timeArticle / 60) == 0) {
+                                            echo "1 phút";
+                                        } elseif (round($timeArticle / 60) < 60) {
+                                            echo round($timeArticle / 60) . "phút";
+                                        } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                            echo "1 giờ";
+                                        } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                            echo round($timeArticle / 60 / 60) . " giờ";
+                                        } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                            echo "1 ngày";
+                                        }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
-                                                                echo date("d-m-Y", strtotime($row->createdDate));
-                                                            }
-                                                            ?></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <?php
-                                        endforeach;
-                                        ?>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="two-grids">
-                                        <div class="menu-title">BUNDESLIGA</div>
-                                        <?php foreach ($resultsDLA as $row): ?>
-                                            <div class="col-md-6 two-grid-left">
-                                                <div class="two-grid-info">
-                                                    <div class="two-grid-img">
-                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
-                                                    </div>
-                                                    <div class="two-grid-text">
-                                                        <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
-                                                            <p><?php echo $row->des_article; ?> </p>
-                                                        </div>
-                                                        <div class="t-grid author-grid two-grid-author">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
-                                                            $timeArticle = time() - strtotime($row->createdDate);
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } 
+                                        else {
+                                            echo date("d-m-Y", strtotime($row->createdDate));
+                                        }
+                                        ?></a></li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                        <?php
+                                    endforeach;
+                                    ?>
+                                                                            <div class="clearfix"> </div>
+                                                                        </div>
+                                                                        <div class="two-grids">
+                                                                            <div class="menu-title">BUNDESLIGA</div>
+                                    <?php foreach ($resultsDLA as $row): ?>
+                                                                                    <div class="col-md-6 two-grid-left">
+                                                                                        <div class="two-grid-info">
+                                                                                            <div class="two-grid-img">
+                                                                                                <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                                                            </div>
+                                                                                            <div class="two-grid-text">
+                                                                                                <div class="three-grid-text-heading two-grid-text-heading">
+                                                                                                    <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                                                                    <p><?php echo $row->des_article; ?> </p>
+                                                                                                </div>
+                                                                                                <div class="t-grid author-grid two-grid-author">
+                                                                                                    <ul>
+                                                                                                        <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
+                                        $timeArticle = time() - strtotime($row->createdDate);
+                                        if (round($timeArticle / 60) == 0) {
+                                            echo "1 phút";
+                                        } elseif (round($timeArticle / 60) < 60) {
+                                            echo round($timeArticle / 60) . "phút";
+                                        } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                            echo "1 giờ";
+                                        } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                            echo round($timeArticle / 60 / 60) . " giờ";
+                                        } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                            echo "1 ngày";
+                                        }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
-                                                                echo date("d-m-Y", strtotime($row->createdDate));
-                                                            }
-                                                            ?></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <?php
-                                        endforeach;
-                                        ?>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="two-grids">
-                                        <div class="menu-title">SERIA</div>
-                                        <?php foreach ($resultsSRA as $row): ?>
-                                            <div class="col-md-6 two-grid-left">
-                                                <div class="two-grid-info">
-                                                    <div class="two-grid-img">
-                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
-                                                    </div>
-                                                    <div class="two-grid-text">
-                                                        <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
-                                                            <p><?php echo $row->des_article; ?> </p>
-                                                        </div>
-                                                        <div class="t-grid author-grid two-grid-author">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
-                                                            $timeArticle = time() - strtotime($row->createdDate);
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } 
+                                        else {
+                                            echo date("d-m-Y", strtotime($row->createdDate));
+                                        }
+                                        ?></a></li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                        <?php
+                                    endforeach;
+                                    ?>
+                                                                            <div class="clearfix"> </div>
+                                                                        </div>
+                                                                        <div class="two-grids">
+                                                                            <div class="menu-title">SERIA</div>
+                                    <?php foreach ($resultsSRA as $row): ?>
+                                                                                    <div class="col-md-6 two-grid-left">
+                                                                                        <div class="two-grid-info">
+                                                                                            <div class="two-grid-img">
+                                                                                                <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                                                            </div>
+                                                                                            <div class="two-grid-text">
+                                                                                                <div class="three-grid-text-heading two-grid-text-heading">
+                                                                                                    <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                                                                    <p><?php echo $row->des_article; ?> </p>
+                                                                                                </div>
+                                                                                                <div class="t-grid author-grid two-grid-author">
+                                                                                                    <ul>
+                                                                                                        <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
+                                        $timeArticle = time() - strtotime($row->createdDate);
+                                        if (round($timeArticle / 60) == 0) {
+                                            echo "1 phút";
+                                        } elseif (round($timeArticle / 60) < 60) {
+                                            echo round($timeArticle / 60) . "phút";
+                                        } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                            echo "1 giờ";
+                                        } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                            echo round($timeArticle / 60 / 60) . " giờ";
+                                        } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                            echo "1 ngày";
+                                        }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
-                                                                echo date("d-m-Y", strtotime($row->createdDate));
-                                                            }
-                                                            ?></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <?php
-                                        endforeach;
-                                        ?>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="two-grids">
-                                        <div class="menu-title">LIGUE 1</div>
-                                        <?php foreach ($resultsL1 as $row): ?>
-                                            <div class="col-md-6 two-grid-left">
-                                                <div class="two-grid-info">
-                                                    <div class="two-grid-img">
-                                                        <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
-                                                    </div>
-                                                    <div class="two-grid-text">
-                                                        <div class="three-grid-text-heading two-grid-text-heading">
-                                                            <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
-                                                            <p><?php echo $row->des_article; ?> </p>
-                                                        </div>
-                                                        <div class="t-grid author-grid two-grid-author">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
-                                                            $timeArticle = time() - strtotime($row->createdDate);
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } 
+                                        else {
+                                            echo date("d-m-Y", strtotime($row->createdDate));
+                                        }
+                                        ?></a></li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                        <?php
+                                    endforeach;
+                                    ?>
+                                                                            <div class="clearfix"> </div>
+                                                                        </div>
+                                                                        <div class="two-grids">
+                                                                            <div class="menu-title">LIGUE 1</div>
+                                    <?php foreach ($resultsL1 as $row): ?>
+                                                                                    <div class="col-md-6 two-grid-left">
+                                                                                        <div class="two-grid-info">
+                                                                                            <div class="two-grid-img">
+                                                                                                <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><img class="image-article-detail" src="<?php echo $this->request->webroot . 'uploads/articles/' . $row->image; ?>"/></a>
+                                                                                            </div>
+                                                                                            <div class="two-grid-text">
+                                                                                                <div class="three-grid-text-heading two-grid-text-heading">
+                                                                                                    <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?></a>
+                                                                                                    <p><?php echo $row->des_article; ?> </p>
+                                                                                                </div>
+                                                                                                <div class="t-grid author-grid two-grid-author">
+                                                                                                    <ul>
+                                                                                                        <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
+                                        $timeArticle = time() - strtotime($row->createdDate);
+                                        if (round($timeArticle / 60) == 0) {
+                                            echo "1 phút";
+                                        } elseif (round($timeArticle / 60) < 60) {
+                                            echo round($timeArticle / 60) . "phút";
+                                        } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                            echo "1 giờ";
+                                        } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                            echo round($timeArticle / 60 / 60) . " giờ";
+                                        } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                            echo "1 ngày";
+                                        }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
-                                                                echo date("d-m-Y", strtotime($row->createdDate));
-                                                            }
-                                                            ?></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <?php
-                                        endforeach;
-                                        ?>
-                                        <div class="clearfix"> </div>
-                                    </div>
+                                        else {
+                                            echo date("d-m-Y", strtotime($row->createdDate));
+                                        }
+                                        ?></a></li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                        <?php
+                                    endforeach;
+                                    ?>
+                                                                            <div class="clearfix"> </div>
+                                                                        </div>-->
 
 
                                 </div>
@@ -389,31 +389,31 @@
                                         <div class="top-grid-left-right-info">
                                             <a class="text" href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title; ?> </a>
 
-                                            <div class="t-grid right-info-t-grid">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
-                                                            $timeArticle = time() - strtotime($row->createdDate);
-                                                            if (round($timeArticle / 60) == 0) {
-                                                                echo "1 phút";
-                                                            } elseif (round($timeArticle / 60) < 60) {
-                                                                echo round($timeArticle / 60) . "phút";
-                                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
-                                                                echo "1 giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
-                                                                echo round($timeArticle / 60 / 60) . " giờ";
-                                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
-                                                                echo "1 ngày";
-                                                            } 
+                                            <!--                                            <div class="t-grid right-info-t-grid">
+                                                                                            <ul>
+                                                                                                <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
+                                            $timeArticle = time() - strtotime($row->createdDate);
+                                            if (round($timeArticle / 60) == 0) {
+                                                echo "1 phút";
+                                            } elseif (round($timeArticle / 60) < 60) {
+                                                echo round($timeArticle / 60) . "phút";
+                                            } elseif (round(($timeArticle / 60 / 60) == 0)) {
+                                                echo "1 giờ";
+                                            } elseif (round(($timeArticle / 60 / 60) < 24)) {
+                                                echo round($timeArticle / 60 / 60) . " giờ";
+                                            } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
+                                                echo "1 ngày";
+                                            }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
-                                                                echo date("d-m-Y", strtotime($row->createdDate));
-                                                            }
-                                                            ?></a></li>
-                                                    <!--<li><a href="#"><i class="fa fa-user"></i> Quisque massa</a></li>-->
-                                                </ul>
-                                            </div>
+                                            else {
+                                                echo date("d-m-Y", strtotime($row->createdDate));
+                                            }
+                                            ?></a></li>
+                                                                                                <li><a href="#"><i class="fa fa-user"></i> Quisque massa</a></li>
+                                                                                            </ul>
+                                                                                        </div>-->
                                         </div>
                                     </div>
                                     <?php
@@ -430,7 +430,7 @@
                     <!-- top-grid-right -->
                     <div class="col-md-3 top-grid-right">
                         <!-- today-match -->
-<!--                        <div class="today-match">
+                        <div class="today-match">
                             <div class="today-match-heading">
                                 <h2>Lịch thi đấu</h2>
                             </div>
@@ -439,15 +439,15 @@
                                     <ul>
                                         <?php
                                         foreach ($scheduleNHA as $row):
-                                            $start_date = date('H:i d/m', strtotime($row->time_start));
+                                            $start_date = date('d/m H:i', strtotime($row->start_time));
                                             ?>
-                                            <li><span><?php echo $start_date; ?></span> <?php echo $row->team_home; ?> <span class="color">vs</span> <?php echo $row->team_guest; ?></li>
+                                            <li><span><?php echo $start_date; ?></span>  <?php echo $row->name; ?></li>
                                         <?php endforeach;
                                         ?>
                                     </ul>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
                         <!-- //today-match -->
 
                         <!-- player-rank -->
@@ -564,7 +564,7 @@
 
             </div>
         </div>
-      
+
         <!--footer section start-->
         <?php echo $this->element("footer"); ?>
         <!--footer section end-->

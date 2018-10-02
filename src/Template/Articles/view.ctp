@@ -24,7 +24,7 @@
                                             <div class="top-news-grid-heading">
                                                 <a href="<?php echo $this->Url->build(["controller" => "articles", "action" => "view", $row->type, $row->map_url]); ?>"><?php echo $row->title ?> </a>
                                             </div>
-                                            <div class="t-grid top-th-grid">
+<!--                                            <div class="t-grid top-th-grid">
                                                 <ul>
                                                     <li><a href="#"><i class="fa fa-clock-o"></i>  <?php
                                                             $timeArticle = time() - strtotime($row->createdDate);
@@ -38,17 +38,17 @@
                                                                 echo round($timeArticle / 60 / 60) . " giờ";
                                                             } elseif (round(($timeArticle / 60 / 60 / 24) == 0)) {
                                                                 echo "1 ngày";
-                                                            } 
+                                                            }
 //                                                            elseif (round(($timeArticle / 60 / 60 / 24) < 365)) {
 //                                                                echo round($timeArticle / 60 / 60 / 24) . " ngày";
 //                                                            }
-                                                            else{
+                                                            else {
                                                                 echo date("d-m-Y", strtotime($row->createdDate));
                                                             }
                                                             ?></a></li>
-                                                    <!--<li><a href="#"><i class="fa fa-user"></i> Vivamus nibh</a></li>-->
+                                                    <li><a href="#"><i class="fa fa-user"></i> Vivamus nibh</a></li>
                                                 </ul>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <?php
                                     endforeach;
@@ -74,13 +74,19 @@
                                     <div class="top-grid-left-left-grids">
                                         <div class="s-top-grid-left-img">
                                             <div  class="single-img-grid">
-                                                <div><a href="<?php echo $this->Url->build(["controller" => "Articles", "action" => "edit", $id]); ?>"> 
-                                                        <?php
-                                                        if ($Auth->user()) {
-                                                            echo "edit";
-                                                        }
-                                                        ?>
-                                                    </a></div>
+                                                <div>
+                                                    <?php if ($Auth->user()) { ?>
+                                                        <a href="<?php echo $this->Url->build(["controller" => "Articles", "action" => "edit", $id]); ?>" class="btn btn-primary"> 
+
+                                                            Edit
+
+                                                        </a>
+
+                                                        <a href="<?php echo $this->Url->build(["controller" => "Articles", "action" => "delete", $id]); ?>" class="btn btn-primary"> 
+                                                            Delete
+                                                        </a>
+                                                    <?php }
+                                                    ?>                                                </div>
                                                 <h2><?php echo $article->title; ?></h2>
                                                 <div class="description-article"><?php echo $article->des_article; ?></div>
                                                 <!--<div class="image-article-view"><img style="width: 100%;" src="<?php echo $this->request->webroot . "uploads/articles/$article->image" ?>"/></div>-->
@@ -96,79 +102,80 @@
                                 <div class="col-md-4 top-grid-left-right s-top-grid-left-right">
                                     <!-- most-view-grids -->
                                     <!-- today-match -->
-                                    <!--                                    <div class="today-match">
-                                                                            <div class="today-match-heading">
-                                                                                <h2>Lịch thi đấu</h2>
-                                                                            </div>
-                                                                            <div class="match-grid">
-                                                                                <div class="match-info">
-                                                                                    <ul>
-                                                                                        <li><span>16:00</span> Germany <span class="color">Vs</span> England</li>
-                                                                                        <li><span>17:30</span> Hungary <span class="color">Vs</span> Croatia</li>
-                                                                                        <li><span>18:45</span> Finland <span class="color">Vs</span> Austria</li>
-                                                                                        <li><span>19:00</span> Poland <span class="color">Vs</span> Spain</li>
-                                                                                        <li><span>20:15</span> Italy <span class="color">Vs</span> France</li>
-                                                                                        <li><span>20:45</span> Portugal <span class="color">Vs</span> Netherlands</li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>-->
+                                    <div class="today-match">
+                                        <div class="today-match-heading">
+                                            <h2>Lịch thi đấu</h2>
+                                        </div>
+                                        <div class="match-grid">
+                                            <div class="match-info">
+                                                <ul>
+                                                    <?php
+                                                    foreach ($scheduleNHA as $row):
+                                                        $start_date = date('d/m H:i', strtotime($row->start_time));
+                                                        ?>
+                                                        <li><span><?php echo $start_date; ?></span>  <?php echo $row->name; ?></li>
+                                                    <?php endforeach;
+                                                    ?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!-- //today-match -->
 
                                     <!-- player-rank -->
-                                     <?php if ($isRank != 0) { ?>
-                                    <div class="player-rank">
-                                        <div class="ranking-heading">
-                                            <h3>Bảng xếp hạng</h3>
+                                    <?php if ($isRank != 0) { ?>
+                                        <div class="player-rank">
+                                            <div class="ranking-heading">
+                                                <h3>Bảng xếp hạng</h3>
+                                            </div>
+                                            <div class="ranking-grids">
+                                                <table>
+                                                    <thead>
+                                                    <th class="th-rank">
+                                                        Hạng
+                                                    </th>
+                                                    <th class="th-country">
+                                                        Đội bóng
+                                                    </th>
+                                                    <th class="th-t-points">
+                                                        Trận
+                                                    </th>
+                                                    <th class="th-p-points">
+                                                        Điểm
+                                                    </th>
+                                                    <th class="th-p-points">
+                                                        Hiệu số
+                                                    </th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
+                                                        $index = 0;
+                                                        foreach ($rankNHA as $row):
+                                                            $index++;
+                                                            ?>
+                                                            <tr class="b-color">
+                                                                <td class="rank">
+                                                                    <?php echo $index; ?>
+                                                                </td>
+                                                                <td class="country">
+                                                                    <?php echo $row->name_team_rank ?>
+                                                                </td>
+                                                                <td class="t-points">
+                                                                    <?php echo $row->match_rank ?>
+                                                                </td>
+                                                                <td class="t-points p-points">
+                                                                    <?php echo $row->score_rank ?>
+                                                                </td>
+                                                                <td class="t-points p-points">
+                                                                    <?php echo $row->goals_rank - $row->goals_lost_rank ?>
+                                                                </td>
+                                                            </tr>
+                                                        <?php endforeach; ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-                                        <div class="ranking-grids">
-                                            <table>
-                                                <thead>
-                                                <th class="th-rank">
-                                                    Hạng
-                                                </th>
-                                                <th class="th-country">
-                                                    Đội bóng
-                                                </th>
-                                                <th class="th-t-points">
-                                                    Trận
-                                                </th>
-                                                <th class="th-p-points">
-                                                    Điểm
-                                                </th>
-                                                <th class="th-p-points">
-                                                    Hiệu số
-                                                </th>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    $index = 0;
-                                                    foreach ($rankNHA as $row):
-                                                        $index++;
-                                                        ?>
-                                                        <tr class="b-color">
-                                                            <td class="rank">
-                                                                <?php echo $index; ?>
-                                                            </td>
-                                                            <td class="country">
-                                                                <?php echo $row->name_team_rank ?>
-                                                            </td>
-                                                            <td class="t-points">
-                                                                <?php echo $row->match_rank ?>
-                                                            </td>
-                                                            <td class="t-points p-points">
-                                                                <?php echo $row->score_rank ?>
-                                                            </td>
-                                                            <td class="t-points p-points">
-                                                                <?php echo $row->goals_rank - $row->goals_lost_rank ?>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                     <?php } ?>
+                                    <?php } ?>
                                     <!-- //player-rank -->
                                     <!-- ranking -->
                                     <div class="ranking">
