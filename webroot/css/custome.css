@@ -30,9 +30,11 @@ and open the template in the editor.
 }
 .three-grid-text-heading {
     min-height: 65px;
+    font-family: Arial,Helvetica,sans-serif !important;
 }
 .three-grid-text-heading.two-grid-text-heading {
-    min-height: 185px;
+    height: 185px;
+    font-family: Arial,Helvetica,sans-serif !important;
 }
 .description-article{
     padding: 15px 0;

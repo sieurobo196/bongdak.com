@@ -74,7 +74,7 @@ a:focus, a:active, a:hover {
     -o-border-radius: 4px;
     padding:0;
     font-size: 20px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-weight: 600;
 }
 .meters_list img{
@@ -615,6 +615,7 @@ ul.nav li a span {
     font-size: .9em;
     color: #FFFFFF;
     margin: .4em 0 0 0;
+    opacity: -0.9;
 }
 .dropdown-grids {
     float: left;
@@ -1055,11 +1056,11 @@ video {
     background: #FFF;
 }
 .three-grid-text-heading a{
-    font-size: .875em;
+    font-size: 18px;
     margin: 0;
     line-height: 1.3em;
     color: #333;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-family: 'Francois One', sans-serif;
 }
 .three-grid-text-heading a:hover{
@@ -1158,7 +1159,7 @@ video {
 .date-text h4{
     color:#000;
     font-size:.875em;
-    text-transform:uppercase;
+    /*text-transform:uppercase;*/
     margin:0.5em 0;
 }
 .date-text ul{
@@ -1210,7 +1211,7 @@ video {
 .news-right-grids-info a{
     color: #333;
     font-size: .875em;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     margin: 0.5em 0;
     font-family: 'Francois One', sans-serif;
 }
@@ -1288,12 +1289,12 @@ video {
     color: #F44336;
 }
 .top-news-grid-heading a{
-    font-size: .875em;
+    font-size: 18px;
     margin: 0;
     line-height: 1.3em;
     color: #333;
-    font-family: 'Francois One', sans-serif;
-    text-transform: uppercase;
+    font-family: 'Francois One', sans-serif !important;
+    /*text-transform: uppercase;*/
 }
 .top-news-grid-heading a:hover{
     color:#3E9CCA;
@@ -1335,7 +1336,7 @@ video {
 .more-grid-right-top a{
     color: #000;
     font-size: .875em;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     margin: 0.5em 0;
     font-family: 'Francois One', sans-serif;
 }
@@ -1512,7 +1513,7 @@ h2.resp-accordion {
     padding-bottom: 1em;
 }
 .match-info ul li span{
-    padding: 0 1em;
+    /*padding: 0 1em;*/
     color: #3E9CCA;
 }
 .match-info ul li span.color{
@@ -2552,7 +2553,7 @@ button.btn1.btn-1.btn-1b:hover {
     color: #67D3E0;
     font-weight: 600;
     display: block;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 .forgot a:hover{
     color:#fd5c63;
@@ -2572,7 +2573,7 @@ button.btn1.btn-1.btn-1b:hover {
     color: #67D3E0;
     font-weight: 600;
     display: block;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 .signup-text a:hover{
     color:#fd5c63;
@@ -2639,7 +2640,7 @@ button.btn1.btn-1.btn-1b:hover {
     cursor: pointer;
     font-size: .75em;
     font-weight: 600;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 .forgot-grid ul li input[type="checkbox"]+label span:first-child {
     width: 17px;
@@ -2726,7 +2727,7 @@ blockquote > p {
     margin-bottom: -12px;
     background: transparent;
     font-size: 14px;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 .item-testimonial > .avatar {
     width: 80px;
@@ -4387,6 +4388,7 @@ td.td-rank>input {
     .next-match {
         overflow-x: scroll;
     }
+
 }
 
 /*-- //responsive-start-here --*/
