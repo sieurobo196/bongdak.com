@@ -12,7 +12,7 @@
             <?php
             echo $this->Form->input("title");
             echo $this->Form->input("map_url");
-            echo $this->Form->select("type", ["anh" => "ANH", "cup-c1" => "C1", "tay-ban-nha" => "LALIGA", "italia" => "SERIA"]);
+            echo $this->Form->select("type", ["anh" => "ANH", "vn" => "VN", "tay-ban-nha" => "LALIGA", "italia" => "SERIA","cup-c1" => "C1","duc" => "DUC","phap" => "PHAP"]);
             echo $this->Form->input("metades", array("id" => "des_meta"));
             echo $this->Form->input("metakey", array("id" => "keys"));
             echo $this->Form->input("description", array("id" => "description"));

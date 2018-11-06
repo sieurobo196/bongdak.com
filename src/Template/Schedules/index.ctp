@@ -38,10 +38,10 @@
                                             STT
                                         </th>
                                         <th class="td-schedule">
-                                            Time
+                                            Name
                                         </th>
                                         <th class="td-schedule">
-                                            Name
+                                            Time
                                         </th>
                                         <th class="td-schedule" style="width: 5%">
                                             Pre

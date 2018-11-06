@@ -6,14 +6,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 */
 h1,h2,h3,h4,h5,h6{
     margin:0;	
-    font-family: 'Francois One', sans-serif;
+    font-family: arial,sans-serif;
 }
 ul, ol {margin: 0;}
 p {margin: 0;}
 
 html, body{
     /*font-family: 'Nunito', sans-serif;*/
-    font-family: Verdana,Geneva,Tahoma,Arial,Helvetica,sans-serif;
+    font-family: arial,sans-serif;
     font-size: 100%;
     overflow-x: hidden;
     background: #f9f9f9;
@@ -1000,7 +1000,8 @@ video {
     margin: 0;
     line-height: 1.3em;
     color: #333;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial,sans-serif;
+    font-weight: bold;
 }
 .top-grid-left-info a.text:hover,.top-grid-left-right-info a.text:hover{
     color:#3E9CCA;
@@ -1050,6 +1051,7 @@ video {
 }
 .three-grid-info{
     box-shadow: 0 -1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
+    min-height: 300px;
 }
 .three-grid-text{
     padding: 1em;
@@ -1061,7 +1063,8 @@ video {
     line-height: 1.3em;
     color: #333;
     /*text-transform: uppercase;*/
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
+    font-weight: bold;
 }
 .three-grid-text-heading a:hover{
     color: #3E9CCA;
@@ -1108,7 +1111,7 @@ video {
     font-size: 1.2em;
     margin: 0;
     color: #3E9CCA;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
 }
 .two-grids-bottom-grid-img a:hover{
     color:#F44336;
@@ -1186,7 +1189,7 @@ video {
     color:#3E9CCA;
     font-size: 1em;
     margin: 0 0 1em 0;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
 }
 .more-news-left-heading {
     padding: 1em 0 0 0;
@@ -1213,7 +1216,7 @@ video {
     font-size: .875em;
     /*text-transform: uppercase;*/
     margin: 0.5em 0;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
 }
 .news-right-grids-info a:hover{
     color:#F44336;
@@ -1267,7 +1270,7 @@ video {
     margin: 0;
     line-height: 1.3em;
     color: #333;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
 }
 .top-grid-left-right-top a:hover{
     color:#3E9CCA;
@@ -1293,7 +1296,7 @@ video {
     margin: 0;
     line-height: 1.3em;
     color: #333;
-    font-family: 'Francois One', sans-serif !important;
+    font-family: arial, sans-serif !important;
     /*text-transform: uppercase;*/
 }
 .top-news-grid-heading a:hover{
@@ -1338,7 +1341,7 @@ video {
     font-size: .875em;
     /*text-transform: uppercase;*/
     margin: 0.5em 0;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
 }
 .more-grid-right-top a:hover{
     color:#FFF;
@@ -1775,7 +1778,7 @@ footer {
     margin: 0;
     line-height: 1.3em;
     color: #333;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
 }
 .latest-grid-info a:hover{
     color: #3E9CCA;
@@ -2096,7 +2099,7 @@ ul.callbacks_tabs.callbacks2_tabs a:after {
     margin: 0;
     line-height: 1.3em;
     color: #333;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
 }
 .slider-right-info a:hover{
     color: #3E9CCA;
@@ -2791,13 +2794,13 @@ th.td-rank{
     border: 1px solid #65a530 !important;
 }
 td.td-rank>input {
-    width: 100px;
+    width: 100%;
 }
 .s-author p{
     margin: 0;
     font-size: 1em;
     color: #333;
-    font-family: 'Francois One', sans-serif;
+    font-family: arial, sans-serif;
 }
 .s-author p a {
     color: #272727;
