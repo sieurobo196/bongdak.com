@@ -22,7 +22,11 @@ class ArticlesController extends AppController {
         $isPost = $this->request->is("post");
         if ($isPost) {
             $title = $this->request->data("title");
+
             $mapUrl = $this->request->data("map_url");
+            if ($mapUrl == '') {
+                $mapUrl = 'bong-da-k';
+            }
             $description_meta = $this->request->data("metades");
             $keywords = $this->request->data("metakey");
             $description = $this->request->data("description");
@@ -126,7 +130,7 @@ class ArticlesController extends AppController {
         $this->set("rankNHA", $rankNHA);
         // top goal
         $topGoals = TableRegistry::get("top_goals");
-        $topGoalsNHA = $topGoals->find()->order(["top_goals" => "DESC"]);
+        $topGoalsNHA = $topGoals->find()->where(["country_goal" => "anh"])->order(["top_goals" => "DESC"]);
         $this->set("topGoalsNHA", $topGoalsNHA);
         // schedule
         $schedule = TableRegistry::get("schedules");
